@@ -1,0 +1,22 @@
+/* Стиль смуги прокрутки */
+::-webkit-scrollbar {
+	width: 12px;
+	height: 12px;
+}
+
+/* Фонова доріжка скролбару */
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 2px;
+}
+
+/* Сам "повзунок" (власне скролбар) */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 2px;
+}
+
+/* При наведенні — темніший відтінок */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+.accessibility-btn {
+	@include position(fixed, null, null, 30px, 7%);
+	@include flex(column, center, center, 10px);
+	max-width: 150px;
+	@include pad-radius(19px 9px, 10px);
+	border: 1px solid $white;
+	background: $white;
+	box-shadow: 0px 0px 6px 0px $accent;
+
+	@include text-style(18, 600, 20px, center);
+
+	@include transition;
+
+	&:hover {
+		color: $white;
+		background: $accent;
+	}
+}
+
+.accessibility-menu {
+	@include flex(column, center, center, 10px);
+}
+
+.size {
+	width: 100%;
+	@include text-style(20, 600, 25px, center);
+	@include pad-radius(10px, 10px);
+
+	&:hover {
+		background: $bg;
+	}
+	&.active {
+		background: $bg;
+	}
+}

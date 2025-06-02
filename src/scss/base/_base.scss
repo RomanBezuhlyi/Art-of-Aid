@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	height: 100vh;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	font-family: $font-text;
+	background: $white;
+	color: $text;
+	line-height: 1.4;
+}
+body.locked-scroll {
+	overflow: hidden;
+}
+
+button {
+	cursor: pointer;
+	@include transition;
+}
+
+a {
+	display: block;
+	@include transition;
+}

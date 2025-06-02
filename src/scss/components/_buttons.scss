@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.btn-charity {
+	position: relative;
+	margin-left: -60px;
+	color: $white;
+	background-color: $black;
+	@include pad-radius(21px 35px, 50px);
+	@include center;
+	@include text-style(18, 600, 100%, center);
+
+	&-icon {
+		@include position(absolute, 0, -50px);
+		font-size: rem(42);
+		background: $black;
+		@include box(60px, 60px, 50px);
+		@include flex(row, center, center);
+		@include transition;
+	}
+
+	&:hover {
+		background-color: $accent;
+
+		.btn-charity-icon {
+			background-color: $accent;
+		}
+	}
+}

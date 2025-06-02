@@ -1,0 +1,344 @@
+@use '../abstracts' as *;
+
+.header-wrap {
+	background-color: $bg;
+}
+
+.header {
+	@include flex(row, space-between, center);
+
+	&__logo {
+		@include box(50px, 54px);
+		@include center;
+	}
+
+	&__nav {
+		@include flex(row, center, center, 30px);
+		@include media(tablet) {
+			display: none;
+		}
+	}
+
+	&__nav-item-wrap {
+		position: relative;
+	}
+
+	.submenu {
+		@include position(absolute, 100%, null, null, -10px);
+		z-index: 999;
+
+		background: $white;
+		@include pad-radius(15px 5px, 5px);
+
+		opacity: 0;
+		transform: translateY(-10px);
+		pointer-events: none;
+
+		@include transition;
+	}
+
+	.submenu a {
+		@include pad-radius(5px, 5px);
+		@include text-style(18, 600);
+		white-space: nowrap;
+	}
+
+	.submenu a:hover {
+		color: $accent;
+		background: $bg;
+	}
+
+	.icon-chevron {
+		font-size: rem(24);
+		@include transition;
+	}
+
+	&__nav-item-wrap:hover {
+		.submenu {
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+		}
+		.icon-chevron {
+			color: $accent;
+			transform: rotateX(180deg);
+		}
+		.header__nav-item {
+			color: $accent;
+			&:before {
+				width: 79%;
+			}
+		}
+	}
+
+	&__nav-item {
+		position: relative;
+		@include center;
+		padding: 20px 0;
+
+		@include text-style(18, 600);
+
+		&:before {
+			content: '';
+			@include position(absolute, auto, auto, 15px, 0);
+			@include box(0, 2px);
+			background-color: $accent;
+			@include transition;
+		}
+
+		&:hover {
+			color: $accent;
+			&:before {
+				width: 100%;
+			}
+		}
+
+		&.active {
+			color: $accent;
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+
+	&__right {
+		@include flex(row, flex-end, center, 36px);
+	}
+
+	&__switch {
+		@include flex(row, center, center, 10px);
+
+		&.mobile > .header__switch-item {
+			position: relative;
+			z-index: 111;
+			color: $white;
+			&:before {
+				background-color: $white;
+			}
+		}
+	}
+
+	&__switch-item {
+		position: relative;
+		@include center;
+		padding: 20px 0;
+
+		@include text-style(18, 600);
+
+		&:before {
+			content: '';
+			@include position(absolute, auto, auto, 15px, 0);
+			@include box(0, 2px);
+			background-color: $accent;
+			@include transition;
+		}
+
+		&:hover {
+			color: $accent;
+			&:before {
+				width: 100%;
+			}
+		}
+
+		&.active {
+			color: $accent;
+			&:before {
+				width: 100%;
+			}
+		}
+	}
+
+	&__social {
+		@include flex(row, center, center, 10px);
+		@include media(tablet) {
+			display: none;
+		}
+	}
+
+	&__social-item {
+		@include box(50px);
+		@include center;
+		@include pad-radius(14.2px 0px 14.21px 0px, 25px);
+
+		font-size: rem(21);
+	}
+
+	.facebook {
+		background: $white;
+		&:hover {
+			color: $white;
+			background: #1a77f2;
+		}
+	}
+
+	.instagram {
+		background: linear-gradient(237deg, #ffffff 0%, #ffffff 100%);
+		&:hover {
+			color: $white;
+			background: linear-gradient(
+				237deg,
+				#ee4e81 17.85%,
+				#cf338e 48.15%,
+				#b738b3 63.68%,
+				#5d51db 79.21%
+			);
+		}
+	}
+}
+
+.advantages-wrap {
+	background-color: $bg;
+	padding: 21px;
+	@include media(tablet) {
+		display: none;
+	}
+}
+
+.advantages {
+	@include flex(row, space-between, center, 45px);
+
+	&__item {
+		@include flex(row, flex-start, center, 10px);
+		color: $accent;
+		@include text-style(18, 600, 25px);
+
+		i {
+			font-size: rem(50);
+		}
+	}
+}
+
+.toggle {
+	position: relative;
+	@include box(50px);
+	display: none;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 111;
+	@include media(tablet) {
+		@include center;
+	}
+}
+
+.toggle span {
+	position: absolute;
+	@include box(40px, 2px, 4px);
+	background-color: $black;
+	@include transition;
+}
+
+.toggle span:nth-child(1) {
+	transform: translateY(-15px);
+	width: 25px;
+	left: 5px;
+}
+
+.toggle span:nth-child(2) {
+	transform: translateY(15px);
+	width: 15px;
+	left: 5px;
+}
+
+.toggle span:nth-child(3) {
+	transform: translateX(0);
+}
+
+/* Active (clicked) state */
+.toggle.active span:nth-child(1) {
+	background-color: $white;
+	width: 40px;
+	transform: translateY(0) rotate(45deg);
+	transition-delay: 0.125s;
+}
+
+.toggle.active span:nth-child(2) {
+	background-color: $white;
+	width: 40px;
+	transform: translateY(0) rotate(315deg);
+	transition-delay: 0.125s;
+}
+
+.toggle.active span:nth-child(3) {
+	background-color: $white;
+	transform: translateX(60px);
+}
+
+.mobile-menu {
+	@include position(fixed, $left: 0, $top: 0);
+	@include box(100%, 100vh);
+	background: $text;
+	z-index: 100;
+	display: none;
+	padding: 10px 40px;
+	overflow: hidden;
+	@include transition;
+	opacity: 0;
+	pointer-events: none;
+	@include media(tablet) {
+		@include flex(column, flex-start, center);
+	}
+	@include media(mobile) {
+		padding: 10px 16px;
+	}
+
+	&.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&__logo {
+		@include box(50px, 54px);
+		margin-bottom: 56px;
+		@include media(mobile) {
+			margin-bottom: 80px;
+		}
+	}
+
+	&__nav {
+		@include flex(column, center, center, 40px);
+		margin-bottom: 145px;
+		@include media(mobile) {
+			gap: 25px;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__nav-item {
+		color: $white;
+		font-family: $font-title;
+		@include text-style(32, 700, 48px);
+		@include media(mobile) {
+			@include text-style(24, 700, 36px);
+		}
+	}
+
+	&__social {
+		@include flex(row, center, center, 30px);
+		@include media(mobile) {
+			gap: 20px;
+		}
+	}
+
+	&__social-item {
+		@include box(50px);
+		@include center;
+		@include pad-radius(14.2px 0px 14.21px 0px, 25px);
+
+		font-size: rem(21);
+	}
+	.facebook {
+		color: $white;
+		background: #1a77f2;
+	}
+
+	.instagram {
+		color: $white;
+		background: linear-gradient(
+			237deg,
+			#ee4e81 17.85%,
+			#cf338e 48.15%,
+			#b738b3 63.68%,
+			#5d51db 79.21%
+		);
+	}
+}

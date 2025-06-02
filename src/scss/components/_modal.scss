@@ -1,0 +1,47 @@
+@use '../abstracts' as *;
+
+.modal-wrap {
+	@include center;
+	@include position(fixed, 0, null, null, 0, 1000);
+	@include box(100%, 100vh);
+	background: rgba(0, 0, 0, 0.4);
+	opacity: 0;
+	visibility: hidden;
+	@include transition;
+
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&.is-open .modal {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.modal {
+	position: relative;
+	width: 408px;
+	border: 1px solid $accent;
+	background: $white;
+	box-shadow: 0px 0px 6px 0px $accent;
+	transform: scale(0.95);
+	opacity: 0;
+	@include pad-radius(32px 54px 20px 54px, 30px);
+	@include transition;
+
+	&__close {
+		@include position(absolute, $top: 15px, $right: 15px);
+		font-size: rem(32);
+	}
+
+	&__title {
+		color: $black;
+		font-family: $font-title;
+		padding-bottom: 10px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $bg;
+		@include text-style(32, 700, 40px, center);
+	}
+}

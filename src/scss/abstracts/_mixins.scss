@@ -1,0 +1,110 @@
+@use 'sass:map';
+
+@use './functions' as *;
+
+@mixin flex($direction, $justify, $align, $gap: null) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+	@if $gap != null {
+		gap: $gap;
+	}
+}
+
+@mixin transition {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+@mixin center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin сentering-xy() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin сentering-x() {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin сentering-y() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin position(
+	$position,
+	$top: null,
+	$right: null,
+	$bottom: null,
+	$left: null,
+	$z-index: null
+) {
+	position: $position;
+	@if $top != null {
+		top: $top;
+	}
+	@if $right != null {
+		right: $right;
+	}
+	@if $bottom != null {
+		bottom: $bottom;
+	}
+	@if $left != null {
+		left: $left;
+	}
+	@if $z-index != null {
+		z-index: $z-index;
+	}
+}
+
+@mixin box($width, $height: $width, $radius: null) {
+	width: $width;
+	height: $height;
+
+	@if $radius != null {
+		border-radius: $radius;
+	}
+}
+
+@mixin pad-radius($padding, $radius: null) {
+	padding: $padding;
+
+	@if $radius != null {
+		border-radius: $radius;
+	}
+}
+
+@mixin text-style($size, $weight: 400, $line-height: normal, $align: left) {
+	font-size: rem($size);
+	font-weight: $weight;
+	line-height: $line-height;
+	text-align: $align;
+}
+
+$breakpoints: (
+	'tablet': 1024px,
+	'mobile': 767px,
+);
+
+@mixin media($device) {
+	@if map.has-key($breakpoints, $device) {
+		@media (max-width: map.get($breakpoints, $device)) {
+			@content;
+		}
+	} @else {
+		@warn "Breakpoint '#{$device}' not found in \$breakpoints map.";
+	}
+}

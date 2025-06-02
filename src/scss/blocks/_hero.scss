@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.hero-wrap {
+	@include box(100%, 803px);
+	background: url(../img/hero.png) no-repeat center / cover;
+	@include center;
+}
+
+.hero {
+	@include flex(column, center, center, 20px);
+
+	&__title {
+		font-family: $font-title;
+		color: $white;
+		@include text-style(64, 700, 70px, center);
+	}
+
+	&__text {
+		max-width: 591px;
+		color: $white;
+		@include text-style(20, 600, 25px, center);
+	}
+}
