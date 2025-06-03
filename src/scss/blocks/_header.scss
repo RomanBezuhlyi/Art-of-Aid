@@ -1,6 +1,10 @@
 @use '../abstracts' as *;
 
 .header-wrap {
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 111;
 	background-color: $bg;
 }
 
@@ -182,28 +186,6 @@
 				#b738b3 63.68%,
 				#5d51db 79.21%
 			);
-		}
-	}
-}
-
-.advantages-wrap {
-	background-color: $bg;
-	padding: 21px;
-	@include media(tablet) {
-		display: none;
-	}
-}
-
-.advantages {
-	@include flex(row, space-between, center, 45px);
-
-	&__item {
-		@include flex(row, flex-start, center, 10px);
-		color: $accent;
-		@include text-style(18, 600, 25px);
-
-		i {
-			font-size: rem(50);
 		}
 	}
 }

@@ -2,6 +2,7 @@
 
 .btn-charity {
 	position: relative;
+	z-index: 2;
 	margin-left: -60px;
 	color: $white;
 	background-color: $black;
@@ -24,5 +25,36 @@
 		.btn-charity-icon {
 			background-color: $accent;
 		}
+	}
+}
+
+.primary {
+	@include flex(row, center, center, 10px);
+	display: inline-flex;
+	background: $accent;
+	@include pad-radius(19px 20px, 50px);
+	color: $white;
+	@include text-style(18, 700);
+	overflow: hidden;
+	@include transition;
+
+	.icon-arrow {
+		font-size: rem(16);
+		opacity: 0;
+		width: 0;
+		margin-right: 0;
+		@include transition;
+		white-space: nowrap;
+		overflow: hidden;
+		transform: rotate(180deg);
+	}
+
+	&:hover .icon-arrow {
+		opacity: 1;
+		width: 1.5rem;
+	}
+
+	&:active {
+		background: #1629bb;
 	}
 }

@@ -1,6 +1,12 @@
+import { initFaqToggle } from './modules/faq.js'
 import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
+import { initAdvantagesSwiper } from './modules/swiper.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+	initFaqAccordion() // або initFaqAccordion('.your-custom-class')
+})
 
 document.addEventListener('DOMContentLoaded', () => {
 	initModal({
@@ -14,4 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// })
 	initMenuToggle()
 	initFontSizeSwitcher()
+	initAdvantagesSwiper()
+	initFaqToggle()
 })

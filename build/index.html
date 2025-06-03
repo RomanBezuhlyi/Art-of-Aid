@@ -6,6 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
 		<title>Art of Aid</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 		<link rel="stylesheet" href="./fonts/style.css" />
 		<link rel="stylesheet" href="./css/main.css" />
 	</head>
@@ -97,33 +101,141 @@
 				<span class="btn-charity-icon"><i class="icon-charity"></i></span
 			></a>
 		</div>
-		<button class="accessibility-btn">Меню доступності</button>
+		<button class="accessibility-btn">
+			<span>Меню доступності</span><img src="./img/icons/radixsvg.svg" alt="" />
+		</button>
 	</div>
 </section>
 <section class="advantages-wrap">
 	<div class="container">
-		<ul class="advantages">
-			<li class="advantages__item">
-				<i class="icon-motivation"></i>
-				#Незалежність
-			</li>
-			<li class="advantages__item">
-				<i class="icon-check-mood"></i>
-				#Нейтральність
-			</li>
-			<li class="advantages__item">
-				<i class="icon-heart"></i>
-				#Гуманність
-			</li>
-			<li class="advantages__item">
-				<i class="icon-clarity"></i>
-				#Прозорість та підзвітність
-			</li>
-			<li class="advantages__item">
-				<i class="icon-group"></i>
-				#Інклюзивність
-			</li>
-		</ul>
+		<div class="swiper swiper-advantages">
+			<ul class="swiper-wrapper advantages">
+				<li class="swiper-slide advantages__item">
+					<i class="icon-motivation"></i>
+					#Незалежність
+				</li>
+				<li class="swiper-slide advantages__item">
+					<i class="icon-check-mood"></i>
+					#Нейтральність
+				</li>
+				<li class="swiper-slide advantages__item">
+					<i class="icon-heart"></i>
+					#Гуманність
+				</li>
+				<li class="swiper-slide advantages__item">
+					<i class="icon-clarity"></i>
+					#Прозорість та підзвітність
+				</li>
+				<li class="swiper-slide advantages__item">
+					<i class="icon-group"></i>
+					#Інклюзивність
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="faq-wrap">
+	<div class="container">
+		<div class="faq">
+			<h2 class="faq__title">Маєте запитання? Ми відповідаємо.</h2>
+			<p class="faq__text">
+				Не знайшли необхідної відповіді? Зв’яжіться з нами, щоб поставити
+				запитання
+			</p>
+			<a class="faq__btn primary" href="#">
+				<i class="icon-arrow"></i>Зв’язатись з нами
+			</a>
+
+			<ul class="faq__list">
+				<li class="faq__item">
+					<div class="faq__item-head">
+						<p>Чи є ваша допомога безкоштовною?</p>
+						<i class="icon-chevron"></i>
+					</div>
+					<div class="faq__item-body open">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Repellendus sunt recusandae adipisci fugit nobis impedit dolore
+							neque eveniet, quibusdam facere aut aspernatur velit vero qui.
+							Possimus voluptas, inventore odio eius veritatis atque iusto quae,
+							voluptate aspernatur, consectetur beatae dolorem natus iste
+							ratione soluta recusandae delectus? Accusantium consequuntur quia
+							optio eius?
+						</p>
+					</div>
+				</li>
+				<li class="faq__item">
+					<div class="faq__item-head">
+						<p>Чи є ваша організація зареєстрованою?</p>
+						<i class="icon-chevron"></i>
+					</div>
+					<div class="faq__item-body">
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
+							dicta ullam itaque, ab omnis nisi explicabo. Consequatur ipsum
+							tenetur nobis assumenda totam consectetur fugit facere sed itaque,
+							aspernatur culpa ex.
+						</p>
+					</div>
+				</li>
+				<li class="faq__item">
+					<div class="faq__item-head">
+						<p>З ким ви вже співпрацювали?</p>
+						<i class="icon-chevron"></i>
+					</div>
+					<div class="faq__item-body">
+						<p>
+							Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+							Molestiae esse obcaecati facilis quam temporibus minima
+							repudiandae, voluptates dignissimos amet, hic suscipit pariatur
+							repellendus nobis! Quod nostrum dolore enim iusto provident
+							reiciendis doloribus ut fugit molestiae dolorum. Quas sed, magnam
+							ipsum, facilis non odit obcaecati ullam a quod officia provident
+							dolor molestiae, fuga alias reiciendis exercitationem quam
+							veritatis voluptate neque unde veniam illum hic. Corrupti, vero?
+							Natus, repudiandae! Ab saepe omnis magnam. Odit laboriosam
+							repellat ad veritatis voluptates eum, facere id commodi sed
+							possimus, excepturi debitis eaque numquam error hic repudiandae at
+							quidem labore exercitationem omnis expedita porro inventore. Quos,
+							nihil?
+						</p>
+					</div>
+				</li>
+				<li class="faq__item">
+					<div class="faq__item-head">
+						<p>Як ви забезпечуєте прозорість у використанні ресурсів?</p>
+						<i class="icon-chevron"></i>
+					</div>
+					<div class="faq__item-body">
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+							Doloremque porro enim suscipit quam cum in maiores asperiores
+							facilis sed natus voluptatem itaque nobis quo ut dolor non
+							exercitationem architecto nostrum, mollitia quibusdam magnam,
+							similique hic fuga. Culpa delectus odit nulla quaerat dolorem.
+							Natus recusandae eos nesciunt ipsum voluptate fugiat commodi quis
+							consequuntur! Corrupti dolor fugit vero praesentium neque natus
+							est.
+						</p>
+					</div>
+				</li>
+				<li class="faq__item">
+					<div class="faq__item-head">
+						<p>Як можна підтримати вас?</p>
+						<i class="icon-chevron"></i>
+					</div>
+					<div class="faq__item-body">
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
+							ipsam, quam nisi sint voluptas impedit officia esse perferendis
+							corrupti omnis atque aspernatur laudantium recusandae eius
+							reprehenderit. Culpa sit quos veniam! Officia maiores provident
+							consectetur, vero eum recusandae. Error, qui illum.
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </section>
 </main>
@@ -143,6 +255,8 @@
 	</div>
 </div>
 
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="https://unpkg.com/imask"></script>
 		<script src="./js/index.bundle.js"></script>
 	</body>
 </html>

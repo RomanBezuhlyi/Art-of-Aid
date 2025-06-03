@@ -30,6 +30,10 @@
 	opacity: 0;
 	@include pad-radius(32px 54px 20px 54px, 30px);
 	@include transition;
+	@include media(mobile) {
+		width: 344px;
+		padding: 45px 32px 10px 32px;
+	}
 
 	&__close {
 		@include position(absolute, $top: 15px, $right: 15px);
@@ -43,5 +47,9 @@
 		margin-bottom: 20px;
 		border-bottom: 1px solid $bg;
 		@include text-style(32, 700, 40px, center);
+		@include media(mobile) {
+			font-size: rem(24);
+			line-height: 27px;
+		}
 	}
 }

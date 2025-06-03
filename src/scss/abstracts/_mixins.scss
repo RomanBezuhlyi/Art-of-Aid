@@ -108,3 +108,11 @@ $breakpoints: (
 		@warn "Breakpoint '#{$device}' not found in \$breakpoints map.";
 	}
 }
+
+@mixin mb-section {
+	margin-bottom: 100px;
+
+	@include media(mobile) {
+		margin-bottom: 50px;
+	}
+}

@@ -3,21 +3,70 @@
 .hero-wrap {
 	@include box(100%, 803px);
 	background: url(../img/hero.png) no-repeat center / cover;
-	@include center;
+	@include media(tablet) {
+		height: 1130px;
+	}
+	@include media(mobile) {
+		height: 750px;
+	}
 }
 
 .hero {
-	@include flex(column, center, center, 20px);
+	padding-top: 391px;
+	@include flex(column, flex-start, center, 20px);
+	@include media(tablet) {
+		padding-top: 284px;
+	}
+	@include media(mobile) {
+		padding-top: 166px;
+	}
 
 	&__title {
 		font-family: $font-title;
 		color: $white;
 		@include text-style(64, 700, 70px, center);
+		@include media(tablet) {
+			margin-bottom: 220px;
+		}
+		@include media(mobile) {
+			margin-bottom: 190px;
+			font-size: rem(32);
+			line-height: 40px;
+		}
 	}
 
 	&__text {
 		max-width: 591px;
 		color: $white;
 		@include text-style(20, 600, 25px, center);
+		@include media(tablet) {
+			max-width: 518px;
+		}
+		@include media(mobile) {
+			max-width: 343px;
+		}
+	}
+}
+
+.advantages-wrap {
+	background-color: $bg;
+	padding: 21px 0;
+	@include mb-section;
+	@include media(tablet) {
+		.container {
+			padding: 0 !important;
+		}
+	}
+}
+
+.advantages {
+	&__item {
+		@include flex(row, flex-start, center, 10px);
+		color: $accent;
+		@include text-style(18, 600, 25px);
+
+		i {
+			font-size: rem(50);
+		}
 	}
 }
