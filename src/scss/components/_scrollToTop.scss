@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.scroll-to-top {
+	@include position(fixed, null, 7%, 80px, null, 90);
+	@include center;
+	@include box(50px);
+	@include pad-radius(14px 17px, 25px);
+	background: $white;
+	box-shadow: 0px 0px 6px 0px $accent;
+	opacity: 0;
+	visibility: hidden;
+	@include media(mobile) {
+		@include position(fixed, null, 1%, 70px, null, 90);
+	}
+	i {
+		transform: rotate(90deg);
+	}
+
+	&:hover {
+		color: $white;
+		background: $accent;
+	}
+
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+}

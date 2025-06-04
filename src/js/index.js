@@ -2,13 +2,11 @@ import { initFaqToggle } from './modules/faq.js'
 import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
+import ScrollToTop from './modules/scrollToTop.js'
 import { initAdvantagesSwiper } from './modules/swiper.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-	initFaqAccordion() // або initFaqAccordion('.your-custom-class')
-})
-
-document.addEventListener('DOMContentLoaded', () => {
+	// Модальні вікна
 	initModal({
 		triggerSelector: '.accessibility-btn',
 		modalSelector: '.accessibility-modal',
@@ -18,8 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 	triggerSelector: '.open-feedback',
 	// 	modalSelector: '.feedback-modal-wrap',
 	// })
+
+	// Інші ініціалізації
 	initMenuToggle()
 	initFontSizeSwitcher()
 	initAdvantagesSwiper()
 	initFaqToggle()
+
+	// Кнопка "вгору"
+	new ScrollToTop() // або new ScrollToTop('#customBtn', 400)
 })

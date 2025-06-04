@@ -1,2 +1,123 @@
+@use '../abstracts' as *;
 
+.footer-wrap {
+	padding: 20px 0 24px 0;
+	background-color: $bg;
+}
+.footer {
+	@include flex(row, space-between, flex-start);
+	padding-bottom: 20px;
+	@include media(mobile) {
+		position: relative;
+		@include flex(column, flex-start, flex-start);
+	}
+	&__left-logo {
+		@include box(50px, 54px);
+		margin-bottom: 25px;
+	}
 
+	&__left-list {
+		@include flex(column, flex-start, flex-start, 20px);
+		margin-bottom: 18px;
+	}
+
+	&__left-item {
+		@include flex(row, flex-start, center, 5px);
+		@include text-style(16, 400, 20px);
+		a,
+		span {
+			display: block;
+			@include text-style(18, 600, 25px);
+			@include media(mobile) {
+				@include text-style(16, 400, 20px);
+			}
+		}
+	}
+
+	&__left-social {
+		@include flex(row, flex-start, center, 10px);
+	}
+
+	&__left-social-item {
+		@include box(50px);
+		@include center;
+		@include pad-radius(14.2px 0px 14.21px 0px, 25px);
+
+		font-size: rem(21);
+	}
+	.facebook {
+		color: $white;
+		background: #1a77f2;
+	}
+
+	.instagram {
+		color: $white;
+		background: linear-gradient(
+			237deg,
+			#ee4e81 17.85%,
+			#cf338e 48.15%,
+			#b738b3 63.68%,
+			#5d51db 79.21%
+		);
+	}
+
+	&__right {
+		@include flex(column, flex-start, flex-end);
+	}
+
+	&__right-nav {
+		margin-top: 15px;
+		@include flex(row, flex-end, center, 30px);
+		margin-bottom: 46px;
+		@include media(tablet) {
+			flex-wrap: wrap;
+		}
+		@include media(mobile) {
+			display: none;
+		}
+	}
+
+	&__right-btn {
+		position: relative;
+		right: 50px;
+		margin-bottom: 69px;
+		@include media(tablet) {
+			margin-bottom: 43px;
+		}
+		@include media(mobile) {
+			position: absolute !important;
+			top: 0;
+			right: 50px;
+		}
+	}
+
+	&__right-documents {
+		color: $accent;
+
+		@include text-style(18, 600, 25px);
+
+		text-decoration-line: underline;
+		@include media(mobile) {
+			margin-top: 50px;
+		}
+	}
+
+	&__descr {
+		padding-top: 20px;
+		border-top: 1px solid $grey;
+		@include flex(row, space-between, center);
+		@include media(mobile) {
+			@include flex(column, flex-start, flex-start, 10px);
+		}
+		p {
+			@include flex(row, center, center, 5px);
+			@include text-style(16, 400, 20px);
+		}
+		a {
+			display: block;
+			color: $accent;
+			@include text-style(18, 600, 25px);
+			text-decoration: underline;
+		}
+	}
+}
