@@ -10,7 +10,7 @@
 		@include text-style(48, 700, 50px, center);
 		margin-bottom: 10px;
 		@include media(mobile) {
-			@include text-style(24, 700, 27px);
+			@include text-style(24, 700, 27px, center);
 		}
 	}
 

@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.video-wrap {
+	margin-top: -50px;
+	@include mb-section;
+	@include media(tablet) {
+		margin-top: 0;
+	}
+}
+.video {
+	position: relative;
+	width: 100%;
+	height: 497px;
+	overflow: hidden;
+	border-radius: 40px;
+	@include media(tablet) {
+		height: 288px;
+	}
+	@include media(mobile) {
+		height: 214px;
+	}
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 3;
+	}
+
+	&__iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		z-index: 4;
+		@include media(tablet) {
+			width: 87px;
+			height: 87px;
+		}
+	}
+}

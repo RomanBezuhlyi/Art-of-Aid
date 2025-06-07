@@ -7,6 +7,11 @@
 
 @use './blocks/header' as *;
 @use './blocks/hero' as *;
+@use './blocks/about' as *;
+@use './blocks/path' as *;
+@use './blocks/help' as *;
+@use './blocks/partners' as *;
+@use './blocks/video' as *;
 @use './blocks/faq' as *;
 @use './blocks/footer' as *;
 

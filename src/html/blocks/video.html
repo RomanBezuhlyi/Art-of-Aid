@@ -1,0 +1,64 @@
+<section class="video-wrap container">
+	<div class="video">
+		<img class="video__overlay" src="/img/hero.png" alt="" />
+		<iframe
+			class="video__iframe"
+			src="https://www.youtube.com/embed/SiPawQz5SJA?enablejsapi=1"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+		<button class="video__play">
+			<img src="./img/icons/play.svg" alt="" />
+		</button>
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const videoWrapper = document.querySelector('.video')
+		const iframe = videoWrapper.querySelector('.video__iframe')
+		const overlay = videoWrapper.querySelector('.video__overlay')
+		const playButton = videoWrapper.querySelector('.video__play')
+
+		let player
+
+		// Завантаження API YouTube
+		function loadYouTubeAPI() {
+			const tag = document.createElement('script')
+			tag.src = 'https://www.youtube.com/iframe_api'
+			const firstScriptTag = document.getElementsByTagName('script')[0]
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+		}
+
+		// Ініціалізація гравця після завантаження API
+		window.onYouTubeIframeAPIReady = () => {
+			player = new YT.Player(iframe, {
+				events: {
+					onStateChange: onPlayerStateChange,
+				},
+			})
+		}
+
+		// Обробка стану відео
+		function onPlayerStateChange(event) {
+			if (event.data === YT.PlayerState.ENDED) {
+				overlay.style.display = 'block'
+				playButton.style.display = 'block'
+			}
+		}
+
+		// Обробник кліку для запуску відео
+		function playVideo() {
+			overlay.style.display = 'none'
+			playButton.style.display = 'none'
+			player.playVideo()
+		}
+
+		overlay.addEventListener('click', playVideo)
+		playButton.addEventListener('click', playVideo)
+
+		loadYouTubeAPI()
+	})
+</script>

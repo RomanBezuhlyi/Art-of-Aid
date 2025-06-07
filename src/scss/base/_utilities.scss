@@ -1,3 +1,5 @@
+@use '../abstracts' as *;
+
 .text-center {
 	text-align: center;
 }
@@ -24,4 +26,35 @@
 }
 .text-lowercase {
 	text-transform: lowercase;
+}
+.title {
+	@include flex(column, flex-start, flex-start, 10px);
+	margin-bottom: 50px;
+	@include media(mobile) {
+		margin-bottom: 20px;
+	}
+	&__head {
+		@include flex(row, flex-start, center, 20px);
+		margin-bottom: 10px;
+		span {
+			@include text-style(20, 400, 24px);
+		}
+		h2 {
+			max-width: 400px;
+			font-family: $font-title;
+			@include text-style(48, 700, 50px);
+			@include media(mobile) {
+				max-width: 176px;
+				@include text-style(24, 700, 27px);
+			}
+		}
+	}
+	&__description {
+		max-width: 624px;
+		@include text-style(18, 600, 25px);
+		@include media(mobile) {
+			max-width: 100%;
+			@include text-style(16, 600, 20px);
+		}
+	}
 }

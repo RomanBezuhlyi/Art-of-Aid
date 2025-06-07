@@ -3,7 +3,11 @@ import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
 import ScrollToTop from './modules/scrollToTop.js'
-import { initAdvantagesSwiper } from './modules/swiper.js'
+import {
+	initAdvantagesSwiper,
+	initHelpSwiper,
+	initPartnersSwiper,
+} from './modules/swiper.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Модальні вікна
@@ -22,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initFontSizeSwitcher()
 	initAdvantagesSwiper()
 	initFaqToggle()
+	initHelpSwiper()
+	initPartnersSwiper()
 
 	// Кнопка "вгору"
 	new ScrollToTop() // або new ScrollToTop('#customBtn', 400)

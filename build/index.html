@@ -88,7 +88,8 @@
 	</div>
 </header>
 
-		<main><section class="hero-wrap">
+		<main>
+			<section class="hero-wrap">
 	<div class="container">
 		<div class="hero">
 			<h1 class="hero__title">Гідність. Підтримка. Безпека.</h1>
@@ -134,6 +135,394 @@
 		</div>
 	</div>
 </section>
+<section class="about-wrap">
+	<div class="container">
+		<div class="title">
+			<div class="title__head">
+				<span>Про нас</span>
+				<h2>Знайомство з “Art of Aid”</h2>
+			</div>
+			<p class="title__description">
+				Ми - команда жінок, які двічі пережили вимушене переміщення з Луганщини.
+				Сьогодні ми допомагаємо іншим долати гуманітарні кризи, відновлювати
+				гідність і знаходити опору
+			</p>
+		</div>
+		<div class="about">
+			<div class="about__left">
+				<img src="./img/about-1.jpg" alt="about us" class="about__left-img" />
+				<div class="about__left-content">
+					<div class="about__left-content--wrap">
+						<p class="about__left-text">
+							Після другого вимушеного переміщення у 2022 році наша команда
+							працює у місті Дніпро та віддалених громадах, надаючи юридичну,
+							психосоціальну й гуманітарну підтримку тим, хто цього потребує
+							найбільше. Ми є частиною гуманітарної відповіді в Україні (HNRP)
+							та керуємося міжнародними стандартами допомоги.
+							<br /><br />
+							Ми не просто допомагаємо — ми змінюємо підходи до гуманітарної
+							роботи, поєднуючи професіоналізм, людяність і повагу до
+							різноманіття за принципом «рівний рівному».
+						</p>
+						<a href="#" class="about__left-btn primary"
+							><i class="icon-arrow"></i>Дізнатись більше</a
+						>
+					</div>
+					<img
+						src="./img/about-2.png"
+						alt="about us"
+						class="about__left-content--img"
+					/>
+				</div>
+				<a href="#" class="primary about-mobile-btn"
+					><i class="icon-arrow"></i>Дізнатись більше</a
+				>
+			</div>
+			<img src="./img/about-2.png" alt="about us" class="about__right-img" />
+		</div>
+	</div>
+</section>
+<section class="path-wrap">
+	<div class="container">
+		<div class="title">
+			<div class="title__head">
+				<span>Наш шлях</span>
+				<h2>Історія нашого розвитку</h2>
+			</div>
+			<p class="title__description">
+				Наша організація була заснована у 2018 році на прифронтовій Луганщині
+				жінками та дівчатами, які пережили перше вимушене переміщення з
+				окупованого Луганська.
+			</p>
+		</div>
+		<div class="path">
+			<img class="path__bg" src="./img/map.svg" alt="" />
+			<div class="path__left">
+				<img class="large" src="./img/path.jpg" alt="" />
+				<div class="path__left-wrap-img">
+					<img class="small" src="./img/path-small.jpg" alt="" />
+				</div>
+			</div>
+			<div class="path__right">
+				<p class="path__right-text">
+					Без ресурсів, але з великою рішучістю, ми реалізували десятки
+					ініціатив: відкрили молодіжний простір, проводили інтеграційні та
+					екологічні заходи, створювали безпечні простори для людей поважного
+					віку. Після повномасштабного вторгнення 2022 року ми вдруге втратили
+					дім і переїхали до Дніпра. Почавши з нуля, ми не здались і сьогодні
+					працюємо по всій Україні. Ми самі є частиною нашої цільової аудиторії,
+					тому глибоко розуміємо потреби ВПО, жінок, людей з інвалідністю,
+					ЛГБТК+ спільноти та постраждалих від насильства.
+				</p>
+				<ul class="path__right-list">
+					<li class="path__right-item">
+						<span class="counter" data-target="53" data-suffix="+">0</span>
+						Волонтерів та активістів долучилися до наших ініціатив у різних
+						країнах світу.
+					</li>
+					<li class="path__right-item">
+						<span class="counter" data-target="15" data-suffix=" тис.">0</span>
+						Бенефіціарів охоплено нашими програмами по всій Україні.
+					</li>
+					<li class="path__right-item">
+						<span class="counter" data-target="28" data-suffix=" т.">0</span>
+						Гуманітарних вантажів розповсюджено серед бенефіціарів у межах
+						гуманітарної відповіді.
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="path__bottom-list">
+			<li class="path__right-item">
+				<span class="counter" data-target="53" data-suffix="+">0</span>
+				Волонтерів та активістів долучилися до наших ініціатив у різних країнах
+				світу.
+			</li>
+			<li class="path__right-item">
+				<span class="counter" data-target="15" data-suffix=" тис.">0</span>
+				Бенефіціарів охоплено нашими програмами по всій Україні.
+			</li>
+			<li class="path__right-item">
+				<span class="counter" data-target="28" data-suffix=" т.">0</span>
+				Гуманітарних вантажів розповсюджено серед бенефіціарів у межах
+				гуманітарної відповіді.
+			</li>
+		</ul>
+	</div>
+</section>
+<script>
+	function animateCounter(el, target, suffix = '', duration = 1500) {
+		const startTime = performance.now()
+
+		function update(currentTime) {
+			const elapsed = currentTime - startTime
+			const progress = Math.min(elapsed / duration, 1)
+			const value = Math.floor(progress * target)
+
+			el.textContent = value.toLocaleString('uk-UA') + suffix
+
+			if (progress < 1) {
+				requestAnimationFrame(update)
+			} else {
+				el.textContent = target.toLocaleString('uk-UA') + suffix
+			}
+		}
+
+		requestAnimationFrame(update)
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const counters = document.querySelectorAll('.counter')
+		const options = {
+			threshold: 0.5,
+		}
+
+		const observer = new IntersectionObserver((entries, obs) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const el = entry.target
+					const target = parseInt(el.dataset.target, 10)
+					const suffix = el.dataset.suffix || ''
+
+					animateCounter(el, target, suffix)
+					obs.unobserve(el)
+				}
+			})
+		}, options)
+
+		counters.forEach(counter => observer.observe(counter))
+	})
+</script>
+<section class="help-wrap">
+	<div class="container">
+		<div class="title">
+			<div class="title__head">
+				<span>Допомога</span>
+				<h2>Кому ми допомагаємо</h2>
+			</div>
+			<p class="title__description">
+				Ми підтримуємо людей, чиї життя були зруйновані війною, дискримінацією,
+				втратою дому або ізоляцією від суспільства. Серед наших бенефіціарів:
+			</p>
+		</div>
+		<div class="help">
+			<a class="help__btn btn-charity" href="#"
+				>Отримати підтримку
+				<span class="btn-charity-icon"><i class="icon-arrow"></i></span
+			></a>
+			<div class="help__swiper">
+				<ul class="help__swiper-wrap swiper-wrapper">
+					<li class="help__swiper-slide swiper-slide">
+						<a class="help__swiper-slide--link" href="#">
+							<i class="icon-arrow"></i>
+						</a>
+						<img
+							class="help__swiper-slide--img"
+							src="./img/help/h-1.jpg"
+							alt=""
+						/>
+						<p class="help__swiper-slide--title">Жінки та дівчата</p>
+						<p class="help__swiper-slide--text">
+							які пережили вимушене переміщення, втрату рідних, економічну
+							нестабільність або гендерно зумовлене насильство
+						</p>
+					</li>
+					<li class="help__swiper-slide swiper-slide">
+						<a class="help__swiper-slide--link" href="#">
+							<i class="icon-arrow"></i>
+						</a>
+						<img
+							class="help__swiper-slide--img"
+							src="./img/help/h-2.jpg"
+							alt=""
+						/>
+						<p class="help__swiper-slide--title">Літні люди</p>
+						<p class="help__swiper-slide--text">
+							які втратили свої громади, підтримку, ресурси та почуваються
+							ізольованими.
+						</p>
+					</li>
+					<li class="help__swiper-slide swiper-slide">
+						<a class="help__swiper-slide--link" href="#">
+							<i class="icon-arrow"></i>
+						</a>
+						<img
+							class="help__swiper-slide--img"
+							src="./img/help/h-3.jpg"
+							alt=""
+						/>
+						<p class="help__swiper-slide--title">Діти та підлітки</p>
+						<p class="help__swiper-slide--text">
+							які втратили доступ до безпеки, стабільного навчання та звичного
+							дитинства
+						</p>
+					</li>
+					<li class="help__swiper-slide swiper-slide">
+						<a class="help__swiper-slide--link" href="#">
+							<i class="icon-arrow"></i>
+						</a>
+						<img
+							class="help__swiper-slide--img"
+							src="./img/help/h-4.jpg"
+							alt=""
+						/>
+						<p class="help__swiper-slide--title">Внутрішньо переміщені особи</p>
+						<p class="help__swiper-slide--text">
+							(ВПО) з Луганської, Донецької, Херсонської, Запорізької та інших
+							областей
+						</p>
+					</li>
+					<li class="help__swiper-slide swiper-slide">
+						<a class="help__swiper-slide--link" href="#">
+							<i class="icon-arrow"></i>
+						</a>
+						<img
+							class="help__swiper-slide--img"
+							src="./img/help/h-5.jpg"
+							alt=""
+						/>
+						<p class="help__swiper-slide--title">Внутрішньо переміщені особи</p>
+						<p class="help__swiper-slide--text">
+							Які потребують спеціалізованої підтримки, поваги до своїх потреб
+							та фізичного доступу до послуг
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="help__swiper-nav">
+				<button class="swiper-button-prev"><i class="icon-arrow"></i></button>
+				<button class="swiper-button-next"><i class="icon-arrow"></i></button>
+			</div>
+		</div>
+	</div>
+</section>
+<sections class="partners-wrap">
+	<div class="container">
+		<div class="title">
+			<div class="title__head">
+				<span>Партнери</span>
+				<h2>Разом творимо зміни</h2>
+			</div>
+			<p class="title__description">
+				Наші партнери — це ті, хто розділяє нашу місію допомоги тим, чиї життя
+				зруйновані війною, нерівністю чи ізоляцією. Об’єднуючи зусилля, ми
+				створюємо спільноту підтримки, турботи й відновлення.
+			</p>
+		</div>
+	</div>
+	<div class="partners">
+		<div class="container">
+			<div class="partners__content">
+				<div class="partners__swiper">
+					<ul class="swiper-wrapper partners__list">
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-1.svg" alt="" />
+							</a>
+						</li>
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-2.svg" alt="" />
+							</a>
+						</li>
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-3.svg" alt="" />
+							</a>
+						</li>
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-4.svg" alt="" />
+							</a>
+						</li>
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-5.svg" alt="" />
+							</a>
+						</li>
+						<li class="swiper-slide partners__item">
+							<a href="#" class="partners__link">
+								<img src="./img/partners/p-6.svg" alt="" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="partners__swiper-nav">
+					<button class="partners-button-prev">
+						<i class="icon-arrow"></i>
+					</button>
+					<button class="partners-button-next">
+						<i class="icon-arrow"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</sections>
+<section class="video-wrap container">
+	<div class="video">
+		<img class="video__overlay" src="/img/hero.png" alt="" />
+		<iframe
+			class="video__iframe"
+			src="https://www.youtube.com/embed/SiPawQz5SJA?enablejsapi=1"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin"
+			allowfullscreen
+		></iframe>
+		<button class="video__play">
+			<img src="./img/icons/play.svg" alt="" />
+		</button>
+	</div>
+</section>
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const videoWrapper = document.querySelector('.video')
+		const iframe = videoWrapper.querySelector('.video__iframe')
+		const overlay = videoWrapper.querySelector('.video__overlay')
+		const playButton = videoWrapper.querySelector('.video__play')
+
+		let player
+
+		// Завантаження API YouTube
+		function loadYouTubeAPI() {
+			const tag = document.createElement('script')
+			tag.src = 'https://www.youtube.com/iframe_api'
+			const firstScriptTag = document.getElementsByTagName('script')[0]
+			firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+		}
+
+		// Ініціалізація гравця після завантаження API
+		window.onYouTubeIframeAPIReady = () => {
+			player = new YT.Player(iframe, {
+				events: {
+					onStateChange: onPlayerStateChange,
+				},
+			})
+		}
+
+		// Обробка стану відео
+		function onPlayerStateChange(event) {
+			if (event.data === YT.PlayerState.ENDED) {
+				overlay.style.display = 'block'
+				playButton.style.display = 'block'
+			}
+		}
+
+		// Обробник кліку для запуску відео
+		function playVideo() {
+			overlay.style.display = 'none'
+			playButton.style.display = 'none'
+			player.playVideo()
+		}
+
+		overlay.addEventListener('click', playVideo)
+		playButton.addEventListener('click', playVideo)
+
+		loadYouTubeAPI()
+	})
+</script>
 <section class="faq-wrap">
 	<div class="container">
 		<div class="faq">
@@ -238,7 +627,8 @@
 		</div>
 	</div>
 </section>
-</main>
+
+		</main>
 		<footer class="footer-wrap">
 	<div class="container">
 		<div class="footer">
