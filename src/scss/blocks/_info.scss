@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+
+.info {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	@include media(mobile) {
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+	&__block {
+		@include flex(row, flex-start, center, 24px);
+		@include media(mobile) {
+			@include flex(column-reverse, flex-start, flex-start, 20px);
+		}
+		p {
+			@include text-style(18, 400, 25px);
+			@include media(mobile) {
+				@include text-style(16, 400, 20px);
+				position: relative;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+			}
+		}
+		&.expanded p {
+			-webkit-line-clamp: unset;
+			overflow: visible;
+			display: block;
+		}
+		img {
+			display: flex;
+			flex-shrink: 0;
+			@include box(516px, 325px, 30px);
+			object-fit: cover;
+			@include media(tablet) {
+				@include box(365px, 544px);
+			}
+			@include media(mobile) {
+				@include box(100%, 299px);
+			}
+		}
+	}
+	&__toggle {
+		display: none;
+
+		@include media(mobile) {
+			display: block;
+			font-size: rem(16);
+			color: $accent;
+			margin-left: auto;
+			position: relative;
+			top: -15px;
+		}
+	}
+	&__block:not(:last-child) {
+		margin-bottom: 20px;
+		@include media(tablet) {
+			margin-bottom: 14px;
+		}
+	}
+	&__block:nth-child(2n) {
+		flex-direction: row-reverse;
+		@include media(mobile) {
+			@include flex(column-reverse, flex-start, flex-start, 20px);
+		}
+	}
+}

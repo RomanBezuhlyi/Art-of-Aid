@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.breadcrumbs-wrap {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	@include media(tablet) {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+.breadcrumbs {
+	&__list {
+		@include flex(row, flex-start, center, 2px);
+	}
+
+	&__item {
+		color: $grey;
+		@include text-style(18, 600, 25px);
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+	}
+
+	&__chev {
+		font-size: rem(24);
+		transform: rotate(-90deg);
+	}
+
+	&__item.active {
+		color: $text;
+	}
+}

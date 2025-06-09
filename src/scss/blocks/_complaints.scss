@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+.complaints-wrap {
+	padding: 50px 0;
+	background: url(../img/complaints-bg.png) lightgray 50% / cover no-repeat;
+	@include mb-section;
+}
+.complaints {
+	@include flex(row, center, center, 28px);
+	@include media(tablet) {
+		flex-direction: column;
+	}
+	&__left {
+		padding: 40px;
+		background: $text;
+		backdrop-filter: blur(40px);
+		@include box(50%, 638px, 30px);
+		@include flex(column, center, center);
+		@include media(tablet) {
+			@include box(606px, auto);
+		}
+		@include media(mobile) {
+			width: 100%;
+			padding: 20px 10px;
+		}
+	}
+
+	&__left-title {
+		color: $white;
+		font-family: $font-title;
+		@include text-style(48, 700, 50px, center);
+		margin-bottom: 50px;
+		@include media(mobile) {
+			@include text-style(24, 700, 27px, center);
+			margin-bottom: 20px;
+		}
+	}
+
+	&__left-list {
+		@include flex(column, flex-start, flex-start, 20px);
+		list-style-type: disc;
+		list-style-position: inside;
+	}
+
+	&__left-item {
+		color: $white;
+		@include text-style(20, 600, 25px);
+		@include media(mobile) {
+			@include text-style(16, 400, 25px);
+		}
+	}
+
+	&__right {
+		@include box(50%, 638px, 30px);
+		@include flex(column, center, center);
+		padding: 40px;
+		background: $white;
+		backdrop-filter: blur(40px);
+		@include media(tablet) {
+			width: 606px;
+		}
+		@include media(mobile) {
+			@include box(100%, auto);
+			padding: 20px 10px;
+		}
+	}
+
+	&__right-title {
+		font-family: $font-title;
+		@include text-style(48, 700, 50px, center);
+		margin-bottom: 10px;
+		@include media(mobile) {
+			@include text-style(24, 700, 27px, center);
+		}
+	}
+
+	&__right-text {
+		@include text-style(18, 600, 25px, center);
+		margin-bottom: 20px;
+		@include media(mobile) {
+			@include text-style(16, 400, 20px, center);
+			margin-bottom: 10px;
+		}
+	}
+}

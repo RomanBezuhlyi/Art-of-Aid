@@ -5,6 +5,7 @@
 @use './base/container' as *;
 @use './base/scroll' as *;
 
+// Головна
 @use './blocks/header' as *;
 @use './blocks/hero' as *;
 @use './blocks/about' as *;
@@ -15,7 +16,16 @@
 @use './blocks/faq' as *;
 @use './blocks/footer' as *;
 
+// Про нас
+@use './blocks/breadcrumbs' as *;
+@use './blocks/head' as *;
+@use './blocks/info' as *;
+@use './blocks/reporting' as *;
+@use './blocks/position' as *;
+@use './blocks/complaints' as *;
+
 @use './components/buttons' as *;
+@use './components/inputs' as *;
 @use './components/modal' as *;
 @use './components/accessibility-menu' as *;
 @use './components/scrollToTop' as *;

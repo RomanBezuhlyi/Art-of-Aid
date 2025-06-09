@@ -1,8 +1,14 @@
+import { initCounters } from './modules/counterAnimation.js'
 import { initFaqToggle } from './modules/faq.js'
 import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
+import { initFormValidation } from './modules/formValidation.js'
+import { initPhoneMask } from './modules/mask.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
+import { initReadMore } from './modules/read-more.js'
 import ScrollToTop from './modules/scrollToTop.js'
+import { initVideoPlayer } from './modules/video.js'
+
 import {
 	initAdvantagesSwiper,
 	initHelpSwiper,
@@ -28,6 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	initFaqToggle()
 	initHelpSwiper()
 	initPartnersSwiper()
+	initVideoPlayer()
+	initCounters()
+	initReadMore()
+	initPhoneMask()
+
+	// Ініціалізація з базовими селекторами
+	initFormValidation({
+		formSelector: 'form',
+		checkboxSelector: '#myCheckbox',
+		submitButtonSelector: '.submit',
+		requiredFieldsSelector: 'input[required], textarea[required]',
+		// customValidator: (form) => {
+		//   // Приклад кастомної логіки (повернути true або false)
+		//   return true
+		// },
+	})
 
 	// Кнопка "вгору"
 	new ScrollToTop() // або new ScrollToTop('#customBtn', 400)

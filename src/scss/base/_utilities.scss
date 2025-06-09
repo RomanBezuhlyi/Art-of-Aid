@@ -40,7 +40,7 @@
 			@include text-style(20, 400, 24px);
 		}
 		h2 {
-			max-width: 400px;
+			max-width: 1000px;
 			font-family: $font-title;
 			@include text-style(48, 700, 50px);
 			@include media(mobile) {

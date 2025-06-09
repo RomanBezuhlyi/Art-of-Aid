@@ -1,0 +1,108 @@
+@use '../abstracts' as *;
+
+.row {
+	@include flex(row, center, center, 20px);
+	@include media(mobile) {
+		flex-direction: column;
+		gap: 0;
+	}
+}
+.input {
+	width: 100%;
+	margin-bottom: 10px;
+	label {
+		display: block;
+		@include text-style(18, 600, 25px);
+		margin-bottom: 5px;
+		@include media(mobile) {
+			font-size: rem(16);
+		}
+	}
+	input {
+		@include box(100%, 49px, 10px);
+		padding: 14px 12px 12px 12px;
+
+		border: 1px solid $grey;
+		background: $white;
+
+		@include text-style(16, 400, 20px);
+
+		@include media(mobile) {
+			padding: 14px 12px 12px 9px;
+		}
+
+		&::placeholder {
+			color: #787878;
+		}
+
+		&:focus {
+			border-color: $text;
+		}
+	}
+
+	textarea {
+		@include box(100%, 49px, 10px);
+		padding: 14px 12px 12px 12px;
+
+		border: 1px solid $grey;
+		background: $white;
+		resize: none;
+
+		@include media(mobile) {
+			padding: 14px 12px 12px 9px;
+		}
+
+		&::placeholder {
+			color: #787878;
+		}
+
+		&:focus {
+			border-color: $text;
+		}
+	}
+}
+
+.custom-checkbox {
+	@include flex(row, flex-start, center);
+	cursor: pointer;
+	user-select: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+	input {
+		display: none;
+
+		&:checked + .checkbox-icon {
+			border-color: $text;
+
+			i {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+
+	.checkbox-icon {
+		@include center;
+		@include box(20px, 20px, 5px);
+		border: 1px solid $text;
+		margin-right: 10px;
+		@include transition;
+
+		i {
+			font-size: 18px;
+			color: $text;
+			@include transition;
+			opacity: 0;
+			transform: scale(0);
+			pointer-events: none;
+		}
+	}
+
+	.checkbox-label {
+		@include text-style(16, 400, 20px);
+		@include media(mobile) {
+			@include text-style(14, 400, 20px);
+		}
+	}
+}

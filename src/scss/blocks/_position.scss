@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+.position-wrap {
+	@include mb-section;
+}
+.position {
+	@include flex(row, center, flex-start, 24px);
+	flex-wrap: wrap;
+	@include media(tablet) {
+		justify-content: flex-start;
+	}
+	&__item {
+		width: 300px;
+		@include flex(column, center, center, 8px);
+		@include media(tablet) {
+			width: 48%;
+		}
+		@include media(mobile) {
+			width: 100%;
+		}
+	}
+
+	&__item-icon {
+		@include center;
+		@include box(70px, 70px, 35px);
+		padding: 10px;
+		gap: 10px;
+		font-size: rem(50);
+		color: $accent;
+		background: $white;
+		box-shadow: 0px 0px 12px 0px $accent,
+			0px 0px 6px 0px rgba(40, 58, 207, 0.72);
+	}
+
+	&__item-title {
+		@include text-style(18, 600, 25px, center);
+	}
+
+	&__item-text {
+		@include text-style(16, 400, 20px, center);
+	}
+}
