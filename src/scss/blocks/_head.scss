@@ -21,7 +21,7 @@
 	}
 
 	&__text {
-		max-width: 795px;
+		max-width: 700px;
 		margin: auto;
 		color: $white;
 		@include text-style(20, 600, 25px, center);
@@ -30,6 +30,27 @@
 		}
 		@include media(mobile) {
 			@include text-style(16, 400, 25px, center);
+		}
+	}
+
+	&__btn-wrap {
+		width: 290px;
+		margin: auto;
+		margin-top: 20px;
+		@include media(mobile) {
+			width: 70%;
+		}
+	}
+
+	&__btn {
+		span {
+			font-size: rem(16);
+			transform: rotate(180deg);
+		}
+		&:hover {
+			span {
+				transform: rotate(160deg);
+			}
 		}
 	}
 }

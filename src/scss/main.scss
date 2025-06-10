@@ -24,6 +24,9 @@
 @use './blocks/position' as *;
 @use './blocks/complaints' as *;
 
+// Напрямки
+@use './blocks/directions' as *;
+
 @use './components/buttons' as *;
 @use './components/inputs' as *;
 @use './components/modal' as *;

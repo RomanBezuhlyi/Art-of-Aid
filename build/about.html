@@ -31,7 +31,7 @@
 			<nav class="header__nav">
 				<a class="header__nav-item active" href="/">Головна</a>
 				<a class="header__nav-item" href="about.html">Про нас</a>
-				<a class="header__nav-item" href="#">Напрями</a>
+				<a class="header__nav-item" href="directions.html">Напрями</a>
 				<a class="header__nav-item" href="#">Новини</a>
 				<div class="header__nav-item-wrap">
 					<a class="header__nav-item has-submenu" href="#"
@@ -69,7 +69,7 @@
 			<nav class="mobile-menu__nav">
 				<a class="mobile-menu__nav-item" href="/">Головна</a>
 				<a class="mobile-menu__nav-item" href="about.html">Про нас</a>
-				<a class="mobile-menu__nav-item" href="#">Напрями</a>
+				<a class="mobile-menu__nav-item" href="directions.html">Напрями</a>
 				<a class="mobile-menu__nav-item" href="#">Новини</a>
 				<a class="mobile-menu__nav-item" href="#">Підтримати нас</a>
 				<a class="mobile-menu__nav-item" href="#">Закупівлі/Тендери</a>
@@ -416,41 +416,6 @@
 		</div>
 	</div>
 </section>
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		const form = document.querySelector('form')
-		const inputs = form.querySelectorAll('input[required], textarea[required]')
-		const checkbox = form.querySelector('#myCheckbox')
-		const submitButton = form.querySelector('.submit')
-
-		function checkFormValidity() {
-			let isValid = true
-
-			inputs.forEach(input => {
-				if (!input.value.trim()) {
-					isValid = false
-				}
-			})
-
-			if (!checkbox.checked) {
-				isValid = false
-			}
-
-			submitButton.disabled = !isValid
-		}
-
-		// Слухаємо зміни в полях вводу
-		inputs.forEach(input => {
-			input.addEventListener('input', checkFormValidity)
-		})
-
-		// Слухаємо зміну чекбоксу
-		checkbox.addEventListener('change', checkFormValidity)
-
-		// Перевіряємо при завантаженні
-		checkFormValidity()
-	})
-</script>
 <section class="faq-wrap">
 	<div class="container">
 		<div class="faq">

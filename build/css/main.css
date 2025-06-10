@@ -1757,7 +1757,7 @@ a {
   }
 }
 .head__text {
-  max-width: 795px;
+  max-width: 700px;
   margin: auto;
   color: #ffffff;
   font-size: 1.25rem;
@@ -1777,6 +1777,23 @@ a {
     line-height: 25px;
     text-align: center;
   }
+}
+.head__btn-wrap {
+  width: 290px;
+  margin: auto;
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .head__btn-wrap {
+    width: 70%;
+  }
+}
+.head__btn span {
+  font-size: 1rem;
+  transform: rotate(180deg);
+}
+.head__btn:hover span {
+  transform: rotate(160deg);
 }
 
 .info {
@@ -2184,10 +2201,67 @@ a {
   }
 }
 
+.directions-wrap {
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .directions-wrap {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .directions-wrap {
+    margin-top: 20px;
+  }
+}
+
+.directions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.directions__item {
+  width: 30%;
+}
+@media (max-width: 1024px) {
+  .directions__item {
+    width: 46%;
+  }
+}
+@media (max-width: 767px) {
+  .directions__item {
+    width: 100%;
+  }
+}
+.directions__item-img {
+  width: 100%;
+  height: 246px;
+  border-radius: 30px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.directions__item-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.directions__item-text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+}
+
 .btn-charity {
   position: relative;
   z-index: 2;
-  margin-left: -60px;
+  margin-left: -50px;
   color: #ffffff;
   background-color: #000000;
   padding: 21px 35px;
