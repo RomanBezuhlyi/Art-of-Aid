@@ -1,5 +1,5 @@
 export function initAdvantagesSwiper() {
-	const swiper1 = new Swiper('.swiper-advantages', {
+	new Swiper('.swiper-advantages', {
 		spaceBetween: 20,
 		slidesPerView: 1.5,
 		loop: true,
@@ -19,7 +19,7 @@ export function initAdvantagesSwiper() {
 }
 
 export function initHelpSwiper() {
-	const swiper2 = new Swiper('.help__swiper', {
+	new Swiper('.help__swiper', {
 		spaceBetween: 20,
 		slidesPerView: 1,
 		loop: true,
@@ -54,7 +54,7 @@ export function initHelpSwiper() {
 }
 
 export function initPartnersSwiper() {
-	const swiper3 = new Swiper('.partners__swiper', {
+	new Swiper('.partners__swiper', {
 		spaceBetween: 20,
 		slidesPerView: 2,
 		loop: true,
@@ -73,6 +73,31 @@ export function initPartnersSwiper() {
 			},
 			1025: {
 				slidesPerView: 6,
+			},
+		},
+	})
+}
+
+export function initNewsSwiper() {
+	new Swiper('.news__swiper', {
+		spaceBetween: 20,
+		slidesPerView: 1,
+		loop: true,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		navigation: {
+			nextEl: '.news__swiper-button-next',
+			prevEl: '.news__swiper-button-prev',
+		},
+		breakpoints: {
+			767: {
+				spaceBetween: 24,
+				slidesPerView: 2,
+			},
+			1025: {
+				slidesPerView: 3,
 			},
 		},
 	})

@@ -11,6 +11,7 @@
 .breadcrumbs {
 	&__list {
 		@include flex(row, flex-start, center, 2px);
+		flex-wrap: wrap;
 	}
 
 	&__item {

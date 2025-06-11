@@ -13,6 +13,7 @@ import { initVideoPlayers } from './modules/videos.js'
 import {
 	initAdvantagesSwiper,
 	initHelpSwiper,
+	initNewsSwiper,
 	initPartnersSwiper,
 } from './modules/swiper.js'
 
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initReadMore()
 	initPhoneMask()
 	initVideoPlayers()
+	initNewsSwiper()
 
 	// Ініціалізація з базовими селекторами
 	initFormValidation({

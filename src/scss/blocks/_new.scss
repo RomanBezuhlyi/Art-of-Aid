@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+.new-wrap {
+	margin-top: 20px;
+	@include mb-section;
+}
+
+.new {
+	&__title {
+		font-family: $font-title;
+		@include text-style(48, 700, 50px, center);
+		margin-bottom: 50px;
+		@include media(tablet) {
+			margin-bottom: 20px;
+		}
+		@include media(mobile) {
+			@include text-style(24, 700, 27px, center);
+			margin-bottom: 20px;
+		}
+	}
+
+	&__img-large {
+		width: 100%;
+		height: 330px;
+		border-radius: 30px;
+		object-fit: cover;
+		margin-bottom: 20px;
+		@include media(tablet) {
+			height: 274px;
+		}
+		@include media(mobile) {
+			height: 229px;
+		}
+	}
+
+	&__text {
+		max-width: 732px;
+		margin: 0 auto 20px auto;
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 25px;
+		@include text-style(20, 600, 25px);
+		@include media(tablet) {
+			max-width: 100%;
+		}
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+	}
+
+	&__imgs {
+		@include flex(row, center, center, 20px);
+		margin-bottom: 20px;
+		@include media(tablet) {
+			gap: 14px;
+		}
+		@include media(mobile) {
+			gap: 16px;
+		}
+	}
+
+	&__img-small {
+		width: 516px;
+		height: 330px;
+		border-radius: 30px;
+		object-fit: cover;
+		@include media(tablet) {
+			width: 370px;
+			height: 250px;
+		}
+		@include media(mobile) {
+			width: 164px;
+			height: 129px;
+		}
+	}
+
+	&__back {
+		margin-top: 50px;
+		@include flex(row, flex-start, center, 5px);
+		color: $accent;
+		@include text-style(18, 700, normal);
+		@include media(mobile) {
+			@include text-style(16, 600, normal);
+		}
+
+		i {
+			font-size: rem(15);
+			@include media(mobile) {
+				font-size: rem(12);
+			}
+		}
+	}
+}
