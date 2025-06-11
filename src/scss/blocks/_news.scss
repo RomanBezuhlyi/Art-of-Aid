@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+.news-wrap {
+	margin-top: 50px;
+	@include mb-section;
+	@include media(mobile) {
+		margin-top: 20px;
+	}
+	&__btn {
+		margin-top: 50px;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+
+.news {
+	@include flex(row, center, center, 24px);
+	flex-wrap: wrap;
+	@include media(tablet) {
+		gap: 20px;
+	}
+	&__item {
+		width: 32%;
+		border-radius: 30px;
+		background: $white;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		overflow: hidden;
+		@include media(tablet) {
+			width: 48%;
+		}
+		@include media(mobile) {
+			width: 100%;
+		}
+	}
+
+	&__item-img {
+		height: 216px;
+		object-fit: cover;
+		@include media(mobile) {
+			height: 200px;
+		}
+	}
+
+	&__item-content {
+		padding: 20px;
+	}
+
+	&__item-title {
+		font-family: $font-title;
+		@include text-style(32, 700, 40px);
+		margin-bottom: 10px;
+		@include media(mobile) {
+			@include text-style(24, 700, 30px);
+		}
+	}
+
+	&__item-text {
+		@include text-style(18, 400, 25px);
+		margin-bottom: 20px;
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+	}
+
+	&__item-bottom {
+		@include flex(row, space-between, center);
+	}
+
+	&__item-date {
+		@include text-style(16, 400, 20px);
+		@include media(mobile) {
+			@include text-style(14, 400, 18px);
+		}
+	}
+
+	&__item-link {
+		@include flex(row, center, center, 5px);
+		color: $accent;
+		@include text-style(18, 700, normal);
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+		i {
+			transform: rotate(180deg);
+			font-size: rem(15);
+			@include media(mobile) {
+				font-size: rem(12);
+			}
+		}
+	}
+}

@@ -8,6 +8,7 @@ import { initModal } from './modules/modal.js'
 import { initReadMore } from './modules/read-more.js'
 import ScrollToTop from './modules/scrollToTop.js'
 import { initVideoPlayer } from './modules/video.js'
+import { initVideoPlayers } from './modules/videos.js'
 
 import {
 	initAdvantagesSwiper,
@@ -38,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCounters()
 	initReadMore()
 	initPhoneMask()
+	initVideoPlayers()
 
 	// Ініціалізація з базовими селекторами
 	initFormValidation({

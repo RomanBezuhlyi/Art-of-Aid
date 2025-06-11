@@ -26,6 +26,8 @@
 
 // Напрямки
 @use './blocks/directions' as *;
+@use './blocks/news' as *;
+@use './blocks/videos' as *;
 
 @use './components/buttons' as *;
 @use './components/inputs' as *;

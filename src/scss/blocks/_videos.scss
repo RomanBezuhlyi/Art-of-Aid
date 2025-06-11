@@ -1,0 +1,100 @@
+@use '../abstracts' as *;
+
+.videos-wrap {
+	@include mb-section;
+}
+.videos {
+	&__item {
+		position: relative;
+		@include flex(row, flex-start, flex-start, 55px);
+		padding: 26px 20px;
+		border-radius: 30px;
+		background: $white;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		@include media(mobile) {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: 50px;
+		@include media(tablet) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__item-video {
+		display: flex;
+		position: relative;
+		width: 680px;
+		height: 344px;
+		flex-shrink: 0;
+		overflow: hidden;
+		border-radius: 30px;
+		@include media(tablet) {
+			width: 343px;
+			height: 344px;
+		}
+		@include media(mobile) {
+			width: 100%;
+			height: 192px;
+		}
+	}
+
+	&__item-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 3;
+	}
+
+	&__item-iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__item-play {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		object-fit: cover;
+		z-index: 4;
+		@include media(tablet) {
+			width: 87px;
+			height: 87px;
+		}
+	}
+
+	&__item-content {
+		h3 {
+			font-family: $font-title;
+			@include text-style(32, 700, 40px);
+			margin-bottom: 20px;
+			@include media(mobile) {
+				@include text-style(24, 700, 30px);
+				margin-bottom: 10px;
+			}
+		}
+		p {
+			@include text-style(18, 400, 25px);
+			@include media(mobile) {
+				@include text-style(16, 400, 20px);
+			}
+		}
+	}
+	&__item__date {
+		position: absolute;
+		right: 20px;
+		bottom: 26px;
+
+		@include text-style(16, 400, 20px);
+		@include media(mobile) {
+			@include text-style(14, 400, 18px);
+		}
+	}
+}
