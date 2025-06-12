@@ -30,6 +30,11 @@
 @use './blocks/videos' as *;
 @use './blocks/new' as *;
 
+// Підтримати нас
+@use './blocks/influence' as *;
+
+@use './blocks/404' as *;
+
 @use './components/buttons' as *;
 @use './components/inputs' as *;
 @use './components/modal' as *;

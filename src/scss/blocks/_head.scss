@@ -53,4 +53,19 @@
 			}
 		}
 	}
+
+	&__btns {
+		margin-top: 20px;
+		@include flex(row, center, center, 100px);
+		@include media(tablet) {
+			flex-direction: column;
+			gap: 20px;
+		}
+		.btn-charity {
+			margin-left: 0;
+			@include media(tablet) {
+				margin-left: -50px;
+			}
+		}
+	}
 }

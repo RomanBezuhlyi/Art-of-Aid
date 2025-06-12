@@ -1,0 +1,39 @@
+@use '../abstracts' as *;
+
+.influence-wrap {
+	margin-top: 100px;
+	@include mb-section;
+	@include media(mobile) {
+		margin-top: 50px;
+	}
+}
+
+.influence {
+	@include flex(row, space-between, flex-start, 150px);
+	@include media(tablet) {
+		gap: 20px;
+	}
+	@include media(mobile) {
+		flex-wrap: wrap;
+	}
+	p {
+		@include text-style(18, 400, 25px);
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+	}
+	img {
+		width: 636px;
+		height: 444px;
+		object-fit: cover;
+		border-radius: 30px;
+		@include media(tablet) {
+			width: 367px;
+			height: 569px;
+		}
+		@include media(mobile) {
+			width: 100%;
+			height: 275px;
+		}
+	}
+}

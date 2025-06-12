@@ -1,8 +1,8 @@
 @use '../abstracts' as *;
 
 .directions-wrap {
-	@include mb-section;
 	margin-top: 50px;
+	@include mb-section;
 	@include media(mobile) {
 		margin-top: 20px;
 	}

@@ -8,11 +8,6 @@
 		<title>Art of Aid</title>
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
-		/>
-
-		<link
-			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 		/>
 		<link rel="stylesheet" href="./fonts/style.css" />
@@ -22,15 +17,22 @@
 	<body>
 		@@include('blocks/header.html')
 		<main>
-			@@include('blocks/new/breadcrumbs-4.html')
-			@@include('blocks/new/new.html') @@include('blocks/new/news-slider.html')
-			@@include('blocks/faq.html')
+			<div class="error ">
+        <div class="error__bg"></div>
+        <div class="container">
+				<h1 class="error__title">Ой! Ми загубили цю сторінку…</h1>
+				<div class="error__number">
+					4<img src="./img/error_logo.svg" alt="" />4
+				</div>
+				<p class="error__text">
+					Але шлях до добрих змін починається з іншого кліку.
+				</p>
+				<a class="error__btn primary" href='../'><i class="icon-arrow"></i>Повернутись на головну</a
+				></a>
+        </div>
+			</div>
 		</main>
 		@@include('blocks/footer.html')
-		@@include('components/accessibility-modal.html')
-		@@include('components/scrollToTop.html')
-		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="https://unpkg.com/imask"></script>
 		<script src="./js/index.bundle.js"></script>

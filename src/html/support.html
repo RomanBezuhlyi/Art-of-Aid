@@ -8,11 +8,6 @@
 		<title>Art of Aid</title>
 		<link
 			rel="stylesheet"
-			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
-		/>
-
-		<link
-			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 		/>
 		<link rel="stylesheet" href="./fonts/style.css" />
@@ -22,15 +17,13 @@
 	<body>
 		@@include('blocks/header.html')
 		<main>
-			@@include('blocks/new/breadcrumbs-4.html')
-			@@include('blocks/new/new.html') @@include('blocks/new/news-slider.html')
+			@@include('blocks/support/breadcrumbs-5.html')
+			@@include('blocks/support/head-4.html')@@include('blocks/support/influence.html')
 			@@include('blocks/faq.html')
 		</main>
 		@@include('blocks/footer.html')
 		@@include('components/accessibility-modal.html')
 		@@include('components/scrollToTop.html')
-		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
-
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="https://unpkg.com/imask"></script>
 		<script src="./js/index.bundle.js"></script>
