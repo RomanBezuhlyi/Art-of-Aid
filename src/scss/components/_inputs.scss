@@ -47,6 +47,7 @@
 		border: 1px solid $grey;
 		background: $white;
 		resize: none;
+		height: 103px;
 
 		@include media(mobile) {
 			padding: 14px 12px 12px 9px;

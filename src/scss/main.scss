@@ -15,25 +15,19 @@
 @use './blocks/video' as *;
 @use './blocks/faq' as *;
 @use './blocks/footer' as *;
-
-// Про нас
 @use './blocks/breadcrumbs' as *;
 @use './blocks/head' as *;
 @use './blocks/info' as *;
 @use './blocks/reporting' as *;
 @use './blocks/position' as *;
 @use './blocks/complaints' as *;
-
-// Напрямки
 @use './blocks/directions' as *;
 @use './blocks/news' as *;
 @use './blocks/videos' as *;
 @use './blocks/new' as *;
-
-// Підтримати нас
 @use './blocks/influence' as *;
-
 @use './blocks/404' as *;
+@use './blocks/contacts' as *;
 
 @use './components/buttons' as *;
 @use './components/inputs' as *;
