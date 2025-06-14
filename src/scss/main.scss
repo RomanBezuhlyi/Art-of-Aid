@@ -28,6 +28,9 @@
 @use './blocks/influence' as *;
 @use './blocks/404' as *;
 @use './blocks/contacts' as *;
+@use './blocks/tenders' as *;
+@use './blocks/vacancies' as *;
+@use './blocks/vacancy' as *;
 
 @use './components/buttons' as *;
 @use './components/inputs' as *;

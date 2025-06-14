@@ -1,0 +1,103 @@
+@use '../abstracts' as *;
+
+.vacancies-wrap {
+	margin-top: 50px;
+	@include mb-section;
+	@include media(mobile) {
+		margin-top: 20px;
+	}
+}
+.vacancies {
+	@include flex(row, center, flex-start, 24px);
+	flex-wrap: wrap;
+	row-gap: 50px;
+	@include media(tablet) {
+		row-gap: 40px;
+	}
+	@include media(mobile) {
+		row-gap: 20px;
+	}
+	&__item {
+		position: relative;
+		width: 32%;
+		min-height: 208px;
+		padding: 20px 16px 48px 16px;
+		border-radius: 30px;
+		background: $white;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+		@include media(tablet) {
+			width: 48%;
+		}
+		@include media(mobile) {
+			width: 100%;
+			min-height: 180px;
+		}
+	}
+
+	&__item-top {
+		@include flex(row, space-between, center);
+		margin-bottom: 20px;
+		@include media(mobile) {
+			gap: 5px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__item-title {
+		font-family: $font-title;
+		@include text-style(32, 700, 40px);
+		@include media(mobile) {
+			@include text-style(24, 700, 30px);
+		}
+	}
+
+	&__item-date {
+		display: block;
+		@include text-style(16, 400, 20px);
+		@include media(mobile) {
+			@include text-style(14, 400, 18px);
+		}
+	}
+
+	&__item-start {
+		@include text-style(18, 400, 25px);
+		margin-bottom: 10px;
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+		span {
+			font-weight: 600;
+		}
+	}
+
+	&__item-end {
+		@include text-style(18, 400, 25px);
+		margin-bottom: 20px;
+		@include media(mobile) {
+			@include text-style(16, 400, 20px);
+		}
+		span {
+			font-weight: 600;
+		}
+	}
+
+	&__item-link {
+		position: absolute;
+		right: 16px;
+		bottom: 20px;
+		@include flex(row, flex-end, center, 5px);
+		color: $accent;
+		@include text-style(18, 700, normal);
+		@include media(mobile) {
+			@include text-style(16, 700, 20px);
+		}
+		i {
+			display: block;
+			font-size: rem(15);
+			transform: rotate(180deg);
+			@include media(mobile) {
+				font-size: rem(12);
+			}
+		}
+	}
+}
