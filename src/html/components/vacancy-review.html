@@ -1,0 +1,80 @@
+<div class="vacancy-modal modal-wrap">
+	<div class="modal large">
+		<button class="modal__close"><i class="icon-close"></i></button>
+		<h3 class="modal__title-second">Відгук на вакансію</h3>
+		<p class="modal__text">Будь ласка, заповніть форму нижче.</p>
+		<form>
+			<div class="row">
+				<div class="input">
+					<label for="fullName">Ім’я та прізвище*</label>
+					<input
+						type="text"
+						id="fullName"
+						name="fullName"
+						placeholder="Введіть ім’я та прізвище"
+						required
+					/>
+				</div>
+				<div class="input">
+					<label for="phone">Телефон*</label>
+					<input
+						type="tel"
+						id="text"
+						name="phone"
+						placeholder="Введіть номер телефону"
+						required
+						data-phone-input
+					/>
+				</div>
+			</div>
+			<div class="input">
+				<label for="email">Email*</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					placeholder="Введіть Email"
+					required
+				/>
+			</div>
+			<div class="input">
+				<label for="comment">Коментар</label>
+				<textarea
+					id="comment"
+					name="comment"
+					placeholder="Напишіть ваш коментар"
+				></textarea>
+			</div>
+			<div class="upload">
+				<input type="file" id="resumeUpload" accept=".pdf,.doc,.docx" hidden />
+				<button type="button" id="uploadBtn">Завантажити резюме</button>
+				<p id="fileName"></p>
+			</div>
+			<label class="custom-checkbox">
+				<input type="checkbox" id="myCheckbox" />
+				<span class="checkbox-icon">
+					<i class="icon-check"></i>
+				</span>
+				<span class="checkbox-label"
+					>Я погоджуюсь з умовами обробки моїх персональних даних.</span
+				>
+			</label>
+
+			<button class="submit" type="submit" disabled>
+				Надіслати
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+				>
+					<path
+						d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"
+						fill="white"
+					/>
+				</svg>
+			</button>
+		</form>
+	</div>
+</div>

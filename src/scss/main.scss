@@ -31,6 +31,8 @@
 @use './blocks/tenders' as *;
 @use './blocks/vacancies' as *;
 @use './blocks/vacancy' as *;
+@use './blocks/join' as *;
+@use './blocks/donate' as *;
 
 @use './components/buttons' as *;
 @use './components/inputs' as *;

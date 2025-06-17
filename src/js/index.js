@@ -1,5 +1,6 @@
 import { initCounters } from './modules/counterAnimation.js'
 import { initFaqToggle } from './modules/faq.js'
+import { initFileUpload } from './modules/fileUpload.js'
 import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
 import { initFormValidation } from './modules/formValidation.js'
 import { initPhoneMask } from './modules/mask.js'
@@ -24,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		modalSelector: '.accessibility-modal',
 	})
 
-	// initModal({
-	// 	triggerSelector: '.open-feedback',
-	// 	modalSelector: '.feedback-modal-wrap',
-	// })
+	initModal({
+		triggerSelector: '.vacancy__open-modal',
+		modalSelector: '.vacancy-modal',
+	})
 
 	// Інші ініціалізації
 	initMenuToggle()
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	initPhoneMask()
 	initVideoPlayers()
 	initNewsSwiper()
+	initFileUpload()
 
 	// Ініціалізація з базовими селекторами
 	initFormValidation({

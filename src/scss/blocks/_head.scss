@@ -68,4 +68,12 @@
 			}
 		}
 	}
+
+	&__btn-join {
+		position: relative;
+		left: 50%;
+		transform: translate(-50%);
+		width: 315px;
+		margin-top: 20px;
+	}
 }

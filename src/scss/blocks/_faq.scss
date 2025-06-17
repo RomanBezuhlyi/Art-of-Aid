@@ -24,6 +24,7 @@
 		margin-bottom: 20px;
 		@include media(mobile) {
 			max-width: 100%;
+			@include text-style(16, 600, 20px, center);
 		}
 	}
 
@@ -45,6 +46,10 @@
 		padding-bottom: 15px;
 		border-bottom: 1px solid $grey;
 		margin-bottom: 25px;
+		@include media(mobile) {
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__item.open .faq__item-body {

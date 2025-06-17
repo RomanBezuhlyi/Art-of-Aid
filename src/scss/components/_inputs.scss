@@ -107,3 +107,27 @@
 		}
 	}
 }
+
+.upload {
+	label {
+		display: block;
+		@include text-style(18, 600, 25px);
+		margin-bottom: 5px;
+		@include media(mobile) {
+			font-size: rem(16);
+		}
+	}
+	button {
+		color: $accent;
+		@include text-style(18, 700, normal);
+		text-decoration-line: underline;
+		text-decoration-style: solid;
+		text-decoration-skip-ink: none;
+		text-decoration-thickness: auto;
+		text-underline-offset: auto;
+		text-underline-position: from-font;
+		@include media(mobile) {
+			font-size: rem(16);
+		}
+	}
+}
