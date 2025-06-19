@@ -7,7 +7,6 @@ import { initPhoneMask } from './modules/mask.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
 import { initReadMore } from './modules/read-more.js'
-import ScrollToTop from './modules/scrollToTop.js'
 import { initVideoPlayer } from './modules/video.js'
 import { initVideoPlayers } from './modules/videos.js'
 
@@ -56,7 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
 		//   return true
 		// },
 	})
-
-	// Кнопка "вгору"
-	new ScrollToTop() // або new ScrollToTop('#customBtn', 400)
 })

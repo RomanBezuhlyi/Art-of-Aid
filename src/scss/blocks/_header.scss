@@ -281,7 +281,7 @@
 		@include flex(column, center, center, 40px);
 		margin-bottom: 145px;
 		@include media(mobile) {
-			gap: 25px;
+			gap: 20px;
 			margin-bottom: 50px;
 		}
 	}
@@ -289,9 +289,9 @@
 	&__nav-item {
 		color: $white;
 		font-family: $font-title;
-		@include text-style(32, 700, 48px);
+		@include text-style(32, 700, 40px);
 		@include media(mobile) {
-			@include text-style(24, 700, 36px);
+			@include text-style(24, 700, 30px);
 		}
 	}
 

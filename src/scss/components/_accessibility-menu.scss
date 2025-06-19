@@ -12,7 +12,7 @@
 	@include transition;
 
 	@include media(mobile) {
-		@include position(fixed, null, null, 70px, 1%, 90);
+		@include position(fixed, null, null, 70px, 2%, 90);
 	}
 
 	&:hover {
