@@ -7,6 +7,7 @@ import { initPhoneMask } from './modules/mask.js'
 import { initMenuToggle } from './modules/menuToggle.js'
 import { initModal } from './modules/modal.js'
 import { initReadMore } from './modules/read-more.js'
+import { initCustomSelect } from './modules/select.js'
 import { initVideoPlayer } from './modules/video.js'
 import { initVideoPlayers } from './modules/videos.js'
 
@@ -18,7 +19,6 @@ import {
 } from './modules/swiper.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-	// Модальні вікна
 	initModal({
 		triggerSelector: '.accessibility-btn',
 		modalSelector: '.accessibility-modal',
@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		modalSelector: '.vacancy-modal',
 	})
 
-	// Інші ініціалізації
+	initModal({
+		triggerSelector: '.join__open-modal',
+		modalSelector: '.join-us-modal',
+	})
+
 	initMenuToggle()
 	initFontSizeSwitcher()
 	initAdvantagesSwiper()
@@ -43,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initVideoPlayers()
 	initNewsSwiper()
 	initFileUpload()
+	initCustomSelect()
 
-	// Ініціалізація з базовими селекторами
 	initFormValidation({
 		formSelector: 'form',
 		checkboxSelector: '#myCheckbox',

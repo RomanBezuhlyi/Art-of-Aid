@@ -1,9 +1,23 @@
-<div class="vacancy-modal modal-wrap">
+<div class="join-us-modal modal-wrap">
 	<div class="modal large">
 		<button class="modal__close"><i class="icon-close"></i></button>
 		<h3 class="modal__title-second">Відгук на вакансію</h3>
 		<p class="modal__text">Будь ласка, заповніть форму нижче.</p>
 		<form>
+			<div class="custom-select">
+				<label for="direction">Напрям співпраці*</label>
+				<div class="select-input" id="direction" tabindex="0">
+					<span class="selected">Обрати напрям фонду</span>
+					<i class="icon-chevron"></i>
+					<ul class="options">
+						<li data-value="finance">Фінанси</li>
+						<li data-value="logistics">Логістика</li>
+						<li data-value="media">Медіа</li>
+						<li data-value="volunteering">Волонтерство</li>
+					</ul>
+					<input type="hidden" name="direction" required />
+				</div>
+			</div>
 			<div class="row">
 				<div class="input">
 					<label for="fullName">Ім’я та прізвище*</label>
@@ -44,11 +58,6 @@
 					name="comment"
 					placeholder="Напишіть ваш коментар"
 				></textarea>
-			</div>
-			<div class="upload">
-				<input type="file" id="resumeUpload" accept=".pdf,.doc,.docx" hidden />
-				<button type="button" id="uploadBtn">Завантажити резюме</button>
-				<p id="fileName"></p>
 			</div>
 			<label class="custom-checkbox">
 				<input type="checkbox" id="myCheckbox" type="checkbox" />

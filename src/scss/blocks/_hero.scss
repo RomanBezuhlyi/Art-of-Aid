@@ -4,10 +4,10 @@
 	@include box(100%, 803px);
 	background: url(../img/hero.png) no-repeat center / cover;
 	@include media(tablet) {
-		height: 1130px;
+		height: 1000px;
 	}
 	@include media(mobile) {
-		height: 750px;
+		height: 600px;
 	}
 }
 
@@ -18,7 +18,7 @@
 		padding-top: 284px;
 	}
 	@include media(mobile) {
-		padding-top: 166px;
+		padding-top: 120px;
 	}
 
 	&__title {
@@ -29,7 +29,7 @@
 			margin-bottom: 220px;
 		}
 		@include media(mobile) {
-			margin-bottom: 190px;
+			margin-bottom: 100px;
 			font-size: rem(32);
 			line-height: 40px;
 		}

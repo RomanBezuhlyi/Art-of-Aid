@@ -2,7 +2,8 @@
 
 .head-wrap {
 	@include box(100%, 483px);
-	background: url(../img/head-about.png) no-repeat center / cover;
+	background: url(../img/head-about.png) no-repeat;
+	background-size: cover;
 	padding-top: 100px;
 	@include media(mobile) {
 		padding-top: 50px;

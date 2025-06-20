@@ -52,15 +52,6 @@
 		}
 	}
 
-	&__item.open .faq__item-body {
-		@include transition;
-		max-height: 1000px;
-	}
-
-	&__item.open .faq__item-head .icon-chevron {
-		transform: rotateX(180deg);
-	}
-
 	&__item-head {
 		width: 100%;
 		@include flex(row, space-between, center, 10px);
@@ -80,6 +71,7 @@
 	&__item-body {
 		overflow: hidden;
 		max-height: 0;
+		opacity: 0;
 		@include transition;
 		width: 90%;
 		p {

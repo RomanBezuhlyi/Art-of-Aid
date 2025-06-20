@@ -19,7 +19,7 @@ export function initAdvantagesSwiper() {
 }
 
 export function initHelpSwiper() {
-	new Swiper('.help__swiper', {
+	const swiper2 = new Swiper('.help__swiper', {
 		spaceBetween: 20,
 		slidesPerView: 1,
 		loop: true,

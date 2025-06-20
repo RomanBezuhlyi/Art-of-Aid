@@ -1,13 +1,3 @@
-/**
- * Ініціалізація валідації форми з динамічними селекторами.
- *
- * @param {Object} options
- * @param {string} options.formSelector - Селектор форми (обов'язковий)
- * @param {string} options.checkboxSelector - Селектор чекбокса (за замовчуванням '#myCheckbox')
- * @param {string} options.submitButtonSelector - Селектор кнопки (за замовчуванням '.submit')
- * @param {string} options.requiredFieldsSelector - Селектор обов’язкових полів (за замовчуванням 'input[required], textarea[required]')
- * @param {Function} [options.customValidator] - Додаткова функція валідації, яка повертає true/false
- */
 export function initFormValidation({
 	formSelector,
 	checkboxSelector = '#myCheckbox',
@@ -51,7 +41,6 @@ export function initFormValidation({
 			isValid = false
 		}
 
-		// Виклик додаткової валідації, якщо передана
 		if (customValidator && typeof customValidator === 'function') {
 			isValid = isValid && customValidator(form)
 		}
@@ -59,12 +48,29 @@ export function initFormValidation({
 		submitButton.disabled = !isValid
 	}
 
+	// Прив’язуємо події до input'ів і чекбокса
 	inputs.forEach(input => {
 		input.addEventListener('input', checkFormValidity)
 	})
-
 	checkbox.addEventListener('change', checkFormValidity)
 
-	// Початкова перевірка при ініціалізації
+	// 🔥 РУЧНА ПЕРЕВІРКА для кастомного select
+	const hiddenSelectInput = form.querySelector(
+		'input[name="direction"][type="hidden"]'
+	)
+	if (hiddenSelectInput) {
+		// Додаємо вручну тригер при зміні select-а
+		const selectElement = form.querySelector('.select-input')
+		if (selectElement) {
+			selectElement.querySelectorAll('.options li').forEach(option => {
+				option.addEventListener('click', () => {
+					hiddenSelectInput.value = option.dataset.value
+					hiddenSelectInput.dispatchEvent(new Event('input')) // критично!
+				})
+			})
+		}
+	}
+
+	// Початкова перевірка
 	checkFormValidity()
 }

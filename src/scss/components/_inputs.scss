@@ -131,3 +131,79 @@
 		}
 	}
 }
+
+.custom-select {
+	position: relative;
+	width: 100%;
+	margin-bottom: 10px;
+
+	label {
+		display: block;
+		@include text-style(18, 600, 25px);
+		margin-bottom: 5px;
+		@include media(mobile) {
+			font-size: rem(16);
+		}
+	}
+
+	.select-input {
+		position: relative;
+
+		padding: 14px 12px 12px 12px;
+
+		border: 1px solid $grey;
+		background: $white;
+		@include box(100%, 49px, 10px);
+
+		@include text-style(16, 400, 20px);
+		@include flex(row, space-between, center);
+		cursor: pointer;
+
+		.selected {
+			display: block;
+			pointer-events: none;
+		}
+		i {
+			font-size: 26px;
+			@include transition;
+		}
+
+		.options {
+			opacity: 0;
+			pointer-events: none;
+			width: 100%;
+			position: absolute;
+			top: 59px;
+			left: 0;
+			background: $white;
+			border: 1px solid $grey;
+			height: auto;
+			overflow-y: auto;
+			z-index: 10;
+			border-radius: 10px;
+			transform: translateY(-10px);
+			@include transition;
+
+			li {
+				@include text-style(18, 600, 25px);
+				padding: 5px 12px;
+				cursor: pointer;
+				@include transition;
+
+				&:hover {
+					color: $accent;
+					background-color: $bg;
+				}
+			}
+		}
+
+		&.open .options {
+			transform: translateY(0);
+			opacity: 1;
+			pointer-events: all;
+		}
+		&.open .icon-chevron {
+			transform: rotateX(180deg);
+		}
+	}
+}
