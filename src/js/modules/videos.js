@@ -1,53 +1,20 @@
-export function initVideoPlayers() {
+export function initMultipleVideoBlocks() {
 	const videoItems = document.querySelectorAll('.videos__item-video')
+
 	if (!videoItems.length) return
 
-	const players = []
+	videoItems.forEach(videoItem => {
+		const overlay = videoItem.querySelector('.videos__item-overlay')
+		const playButton = videoItem.querySelector('.videos__item-play')
 
-	function createPlayer(iframe, overlay, playButton) {
-		return new YT.Player(iframe, {
-			events: {
-				onStateChange: event => {
-					if (event.data === YT.PlayerState.ENDED) {
-						overlay.style.display = 'block'
-						playButton.style.display = 'block'
-					}
-				},
-			},
-		})
-	}
+		if (!overlay || !playButton) return
 
-	function setupVideoItem(item) {
-		const iframe = item.querySelector('.videos__item-iframe')
-		const overlay = item.querySelector('.videos__item-overlay')
-		const playButton = item.querySelector('.videos__item-play')
-
-		if (!iframe || !overlay || !playButton) return
-
-		const playerIndex = players.length
-
-		overlay.addEventListener('click', () => {
+		const hideOverlay = () => {
 			overlay.style.display = 'none'
 			playButton.style.display = 'none'
-			players[playerIndex].playVideo()
-		})
+		}
 
-		playButton.addEventListener('click', () => {
-			overlay.style.display = 'none'
-			playButton.style.display = 'none'
-			players[playerIndex].playVideo()
-		})
-
-		players.push(createPlayer(iframe, overlay, playButton))
-	}
-
-	window.onYouTubeIframeAPIReady = () => {
-		videoItems.forEach(setupVideoItem)
-	}
-
-	// Завантаження YouTube API
-	const tag = document.createElement('script')
-	tag.src = 'https://www.youtube.com/iframe_api'
-	const firstScriptTag = document.getElementsByTagName('script')[0]
-	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+		overlay.addEventListener('click', hideOverlay)
+		playButton.addEventListener('click', hideOverlay)
+	})
 }

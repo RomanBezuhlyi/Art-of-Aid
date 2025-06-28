@@ -91,23 +91,6 @@
 			max-width: 250px;
 		}
 	}
-
-	&__form {
-		width: 516px;
-		height: 477px;
-		flex-shrink: 0;
-		border-radius: 30px;
-		border: 1px solid $accent;
-		background: $white;
-		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-		@include media(tablet) {
-			width: 50%;
-			height: 447px;
-		}
-		@include media(mobile) {
-			width: 100%;
-		}
-	}
 }
 .donate-description {
 	margin-top: 100px;
@@ -119,5 +102,214 @@
 	}
 	@include media(mobile) {
 		@include text-style(20, 600, 25px, center);
+	}
+}
+
+.donate-form__wrap {
+	width: 516px;
+	flex-shrink: 0;
+	@include media(tablet) {
+		width: 50%;
+	}
+	@include media(mobile) {
+		width: 100%;
+	}
+}
+
+.donate-form {
+	min-height: 423px;
+	padding: 50px 33px;
+	border-radius: 30px;
+	border: 1px solid $accent;
+	background: $white;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	@include media(tablet) {
+		min-height: 400px;
+		padding: 50px 20px;
+	}
+
+	&__toggle {
+		@include flex(row, space-between, center);
+
+		label {
+			padding-bottom: 20px;
+			color: $black;
+			@include text-style(20, 600, 25px);
+			position: relative;
+			display: block;
+			text-align: center;
+			cursor: pointer;
+			@include transition;
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 6px;
+				border-radius: 30px 30px 0px 0px;
+				background: $accent;
+				opacity: 0;
+				@include transition;
+			}
+			&.active::after {
+				opacity: 1;
+			}
+			input {
+				display: none;
+			}
+		}
+	}
+
+	&__line {
+		width: 100%;
+		height: 1px;
+		background-color: $grey;
+		margin-bottom: 20px;
+	}
+
+	&__sum-field {
+		@include flex(row, flex-start, flex-end);
+		border-bottom: 1px dashed $grey;
+		margin-bottom: 34px;
+
+		input {
+			width: 100%;
+			padding: 0 16px;
+			font-family: $font-title;
+			@include text-style(48, 500, 50px);
+		}
+		input::placeholder {
+			color: $grey;
+		}
+	}
+
+	&__preset {
+		@include flex(row, space-between, center, 10px);
+		margin-bottom: 20px;
+
+		button {
+			padding: 5px;
+			@include center;
+			gap: 7px;
+			width: 144px;
+			height: 49px;
+			border-radius: 30px;
+			border: 1px solid $grey;
+			color: $black;
+			@include text-style(20, 600, 25px);
+			span {
+				color: $grey;
+				@include text-style(18, 600, 25px);
+			}
+			@include media(tablet) {
+				width: 101px;
+				@include text-style(18, 600, 25px);
+				span {
+					@include text-style(16, 400, 20px);
+				}
+			}
+		}
+	}
+
+	&__note {
+		@include flex(row, flex-start, center, 5px);
+		@include text-style(15, 400, 18px);
+		@include transition;
+		margin-bottom: 20px;
+		svg {
+			fill: $accent;
+			width: 20px;
+			height: 20px;
+			display: flex;
+			flex-shrink: 0;
+		}
+	}
+
+	&__submit {
+		width: 100%;
+	}
+	&__submit:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	&__description {
+		@include text-style(14, 400, 18px);
+	}
+
+	.custom-select-2 {
+		position: relative;
+		cursor: pointer;
+
+		.select-trigger {
+			@include flex(row, space-between, center);
+			@include transition;
+			padding: 5px 0;
+
+			i.icon-chevron {
+				position: relative;
+				top: 2px;
+				font-size: 24px;
+				@include transition;
+				display: inline-block;
+			}
+
+			.selected-currency {
+				color: $grey;
+				@include text-style(24, 600, 25px);
+				margin-left: 5px;
+			}
+		}
+
+		&.open .select-trigger i.icon-chevron {
+			transform: rotateX(180deg);
+		}
+
+		.select-options {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: $white;
+			border-radius: 5px;
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+			transform: translateY(-10px);
+			opacity: 0;
+			pointer-events: none;
+
+			z-index: 10;
+			@include transition;
+
+			li {
+				padding: 5px;
+				@include text-style(18, 600);
+				cursor: pointer;
+
+				&:hover,
+				&.active {
+					color: $accent;
+					background: $bg;
+				}
+			}
+		}
+
+		&.open .select-options {
+			opacity: 1;
+			transform: translateY(0);
+			pointer-events: auto;
+		}
+	}
+}
+.donate-agree {
+	margin-top: 20px;
+	padding: 16px;
+	border-radius: 12px;
+	border: 1px solid $accent;
+	background: $white;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	p {
+		@include text-style(14, 400, 18px);
 	}
 }

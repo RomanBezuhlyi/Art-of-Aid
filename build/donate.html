@@ -165,7 +165,78 @@
 				</li>
 			</ul>
 		</div>
-		<div class="donate__form"></div>
+		<div class="donate-form__wrap">
+			<form
+				class="donate-form"
+				id="donate-form"
+				onsubmit="return handleDonateSubmit(event)"
+			>
+				<div class="donate-form__toggle">
+					<label class="active">
+						<input type="radio" name="donate_type" value="one_time" checked />
+						Разовий внесок
+					</label>
+					<label>
+						<input type="radio" name="donate_type" value="monthly" />
+						Підписка
+					</label>
+				</div>
+				<div class="donate-form__line"></div>
+				<div class="donate-form__sum-field">
+					<input type="number" name="amount" placeholder="200" required />
+					<div class="donate-form__currency">
+						<div class="custom-select-2" id="custom-currency">
+							<div class="select-trigger">
+								<i class="icon-chevron"></i>
+								<span class="selected-currency">UAH</span>
+							</div>
+							<ul class="select-options">
+								<li data-currency="UAH" class="active">UAH</li>
+								<li data-currency="EUR">EUR</li>
+								<li data-currency="USD">USD</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="donate-form__preset">
+					<button type="button" data-amount="200">
+						+200 <span class="currency-label">UAH</span>
+					</button>
+					<button type="button" data-amount="500">
+						+500 <span class="currency-label">UAH</span>
+					</button>
+					<button type="button" data-amount="1000">
+						+1000 <span class="currency-label">UAH</span>
+					</button>
+				</div>
+
+				<p class="donate-form__note" id="subscription-note" style="opacity: 0">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 28 28"
+						fill="none"
+					>
+						<path
+							d="M12.668 9.99984H15.3346V7.33317H12.668M14.0013 24.6665C8.1213 24.6665 3.33464 19.8798 3.33464 13.9998C3.33464 8.11984 8.1213 3.33317 14.0013 3.33317C19.8813 3.33317 24.668 8.11984 24.668 13.9998C24.668 19.8798 19.8813 24.6665 14.0013 24.6665ZM14.0013 0.666504C12.2503 0.666504 10.5165 1.01138 8.89886 1.68144C7.28118 2.35151 5.81133 3.33363 4.57321 4.57175C2.07273 7.07223 0.667969 10.4636 0.667969 13.9998C0.667969 17.5361 2.07273 20.9274 4.57321 23.4279C5.81133 24.666 7.28118 25.6482 8.89886 26.3182C10.5165 26.9883 12.2503 27.3332 14.0013 27.3332C17.5375 27.3332 20.9289 25.9284 23.4294 23.4279C25.9299 20.9274 27.3346 17.5361 27.3346 13.9998C27.3346 12.2489 26.9898 10.5151 26.3197 8.89739C25.6496 7.27972 24.6675 5.80986 23.4294 4.57175C22.1913 3.33363 20.7214 2.35151 19.1037 1.68144C17.4861 1.01138 15.7523 0.666504 14.0013 0.666504ZM12.668 20.6665H15.3346V12.6665H12.668V20.6665Z"
+						/>
+					</svg>
+					Скасувати підписку можна у вашому особистому кабінеті.
+				</p>
+
+				<button type="submit" class="donate-form__submit primary" disabled>
+					Підтримати
+				</button>
+			</form>
+			<div class="donate-agree">
+				<p>
+					Ваші пожертви через LiqPay допомагають щодня проводити інклюзивні
+					заходи, надавати правову та психологічну підтримку жінкам, дітям і
+					ВПО, а також забезпечувати гуманітарні набори. Пожертвуючи, ви
+					погоджуєтесь, що сума не підлягає поверненню.
+				</p>
+			</div>
+		</div>
 	</div>
 	<h3 class="donate__sub-title tablet">
 		Ваша підтримка допомагає нам щодня реалізовувати:
@@ -192,7 +263,7 @@
 				<i class="icon-cart"></i>
 			</div>
 			<p class="donate__item-text">
-				Гуманітарні набори (їжа, гігієна, дитячі товари)
+				Гуманітарні набори(їжа, гігієна, дитячі товари)
 			</p>
 		</li>
 	</ul>
@@ -202,6 +273,41 @@
 		кожного внеску.
 	</p>
 </section>
+<script>
+	async function handleDonateSubmit(e) {
+		e.preventDefault()
+
+		const { amount, currency, recurring } = window.getDonationState()
+
+		if (!amount || amount <= 0) {
+			alert('Введіть коректну суму')
+			return false
+		}
+
+		const response = await fetch('/wp-json/liqpay/v1/create', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				amount,
+				currency,
+				recurring,
+			}),
+		})
+
+		const { data, signature } = await response.json()
+
+		const liqForm = document.createElement('form')
+		liqForm.method = 'POST'
+		liqForm.action = 'https://www.liqpay.ua/api/3/checkout'
+		liqForm.acceptCharset = 'utf-8'
+		liqForm.innerHTML = `
+    <input type="hidden" name="data" value="${data}">
+    <input type="hidden" name="signature" value="${signature}">
+  `
+		document.body.appendChild(liqForm)
+		liqForm.submit()
+	}
+</script>
  <section class="faq-wrap">
 	<div class="container">
 		<div class="faq">

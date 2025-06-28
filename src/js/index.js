@@ -1,4 +1,5 @@
 import { initCounters } from './modules/counterAnimation.js'
+import { initDonation } from './modules/donation.js'
 import { initFaqToggle } from './modules/faq.js'
 import { initFileUpload } from './modules/fileUpload.js'
 import { initFontSizeSwitcher } from './modules/fontSizeSwitcher.js'
@@ -9,7 +10,7 @@ import { initModal } from './modules/modal.js'
 import { initReadMore } from './modules/read-more.js'
 import { initCustomSelect } from './modules/select.js'
 import { initVideoPlayer } from './modules/video.js'
-import { initVideoPlayers } from './modules/videos.js'
+import { initMultipleVideoBlocks } from './modules/videos.js'
 
 import {
 	initAdvantagesSwiper,
@@ -44,10 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	initCounters()
 	initReadMore()
 	initPhoneMask()
-	initVideoPlayers()
+	initMultipleVideoBlocks()
 	initNewsSwiper()
 	initFileUpload()
 	initCustomSelect()
+	initDonation()
 
 	initFormValidation({
 		formSelector: 'form',

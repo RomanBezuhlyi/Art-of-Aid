@@ -71,3 +71,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/* Для Chrome, Safari, Edge, Opera */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Для Firefox */
+input[type='number'] {
+	-moz-appearance: textfield;
+}
