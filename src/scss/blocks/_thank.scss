@@ -1,0 +1,67 @@
+@use '../abstracts' as *;
+
+.thank {
+	position: relative;
+	padding-top: 142px;
+	padding-bottom: 100px;
+	@include media(mobile) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.container {
+		position: relative;
+		z-index: 2;
+	}
+	&__bg {
+		position: absolute;
+		@include сentering-xy;
+		width: 752px;
+		height: 593px;
+		border-radius: 752px;
+		background: linear-gradient(90deg, #fef4b7 0%, #8ab4da 50%, #4591f6 100%);
+		filter: blur(100px);
+		@include media(tablet) {
+			width: 500px;
+			height: 500px;
+			border-radius: 500px;
+		}
+		@include media(mobile) {
+			width: 375px;
+			height: 326px;
+			border-radius: 375px;
+		}
+	}
+
+	&__img {
+		width: 167px;
+		height: 167px;
+		margin: auto;
+		margin-bottom: 50px;
+	}
+	&__title {
+		font-family: $font-title;
+		@include text-style(64, 700, 70px, center);
+		margin-bottom: 30px;
+		@include media(tablet) {
+			margin-bottom: 80px;
+		}
+		@include media(mobile) {
+			@include text-style(36, 700, 50px, center);
+			margin-bottom: 50px;
+		}
+	}
+	&__text {
+		font-family: $font-title;
+		@include text-style(32, 700, 40px, center);
+		margin-bottom: 50px;
+		@include media(mobile) {
+			@include text-style(20, 600, 25px, center);
+		}
+	}
+
+	&__btn {
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
