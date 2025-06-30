@@ -1,5 +1,7 @@
 export function initDonation() {
 	const donateForm = document.getElementById('donate-form')
+	if (!donateForm) return // ⛔ Виходимо, якщо форми немає
+
 	const presetButtons = donateForm.querySelectorAll('[data-amount]')
 	const amountInput = donateForm.querySelector('input[name="amount"]')
 	const radioInputs = donateForm.querySelectorAll('input[name="donate_type"]')
